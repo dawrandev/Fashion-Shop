@@ -31,97 +31,113 @@ class DatabaseSeeder extends Seeder
         Product::create([
             'category_id' => 1,
             'name' => 'Nike',
-            'image' => 'shoe-1.jpg'
+            'price' => "200000",
+            'image' => 'shoe-1.jpg',
+            'text_1' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'text_2' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'image_1' => 'single-product-01.jpg',
+            'image_2' => 'single-product-02.jpg',
+            'pcs' => 10
         ]);
         Product::create([
             'category_id' => 2,
             'name' => 'Asos Design',
-            'image' => 'shirt-1.jpg'
+            'price' => "150000",
+            'image' => 'shirt-1.jpg',
+            'text_1' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'text_2' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'image_1' => 'single-product-01.jpg',
+            'image_2' => 'single-product-02.jpg',
+            'pcs' => 10
         ]);
         Product::create([
             'category_id' => 2,
             'name' => 'Asos',
-            'image' => 'shirt-2.jpg'
+            'price' => "199000",
+            'image' => 'shirt-2.jpg',
+            'text_1' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'text_2' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'image_1' => 'single-product-01.jpg',
+            'image_2' => 'single-product-02.jpg',
+            'pcs' => 10
         ]);
         Product::create([
             'category_id' => 3,
             'name' => 'Blue Pant',
-            'image' => 'pant-1.jpg'
+            'price' => "500000",
+            'image' => 'pant-1.jpg',
+            'text_1' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'text_2' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'image_1' => 'single-product-01.jpg',
+            'image_2' => 'single-product-02.jpg',
+            'pcs' => 10
         ]);
         Product::create([
             'category_id' => 3,
             'name' => 'Black Pant',
-            'image' => 'pant-2.jpg'
+            "price" => "275000",
+            'image' => 'pant-2.jpg',
+            'text_1' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'text_2' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'image_1' => 'single-product-01.jpg',
+            'image_2' => 'single-product-02.jpg',
+            'pcs' => 10
         ]);
         Product::create([
             'category_id' => 4,
             'name' => 'Leather Jacket',
-            'image' => 'jacket-1.png'
+            'price' => "350000",
+            'image' => 'jacket-1.png',
+            'text_1' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'text_2' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'image_1' => 'single-product-01.jpg',
+            'image_2' => 'single-product-02.jpg',
+            'pcs' => 10
         ]);
         Product::create([
             'category_id' => 1,
             'name' => 'adidas',
-            'image' => 'shoe-2.jpg'
+            'price' => "225000",
+            'image' => 'shoe-2.jpg',
+            'text_1' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'text_2' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'image_1' => 'single-product-01.jpg',
+            'image_2' => 'single-product-02.jpg',
+            'pcs' => 10
         ]);
         Product::create([
             'category_id' => 1,
             'name' => 'Loro Piano',
-            'image' => 'shoe-3.jpg'
+            'price' => "399000",
+            'image' => 'shoe-3.jpg',
+            'text_1' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'text_2' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'image_1' => 'single-product-01.jpg',
+            'image_2' => 'single-product-02.jpg',
+            'pcs' => 10
         ]);
         Product::create([
             'category_id' => 2,
             'name' => 'Core',
-            'image' => 'shirt-3.jpg'
+            'price' => "299000",
+            'image' => 'shirt-3.jpg',
+            'text_1' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'text_2' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'image_1' => 'single-product-01.jpg',
+            'image_2' => 'single-product-02.jpg',
+            'pcs' => 10
         ]);
         Product::create([
             'category_id' => 3,
             'name' => 'Versus Pant',
-            'image' => 'pant-3.jpg'
+            'price' => "255000",
+            'image' => 'pant-3.jpg',
+            'text_1' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'text_2' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias debitis ratione quidem impedit laborum repellendus dignissimos! Odit omnis eos laborum qui magni sit, repellat asperiores reiciendis quibusdam, quis optio earum.',
+            'image_1' => 'single-product-01.jpg',
+            'image_2' => 'single-product-02.jpg',
+            'pcs' => 10
         ]);
-        Price::create([
-            'category_id' => 1,
-            'product_id' => 1,
-            'price' => "200000"
-        ]);
-        Price::create([
-            'category_id' => 2,
-            'product_id' => 2,
-            'price' => "150000"
-        ]);
-        Price::create([
-            'category_id' => 2,
-            'product_id' => 3,
-            'price' => "199000"
-        ]);
-        Price::create([
-            'category_id' => 3,
-            'product_id' => 4,
-            'price' => "500000"
-        ]);
-        Price::create([
-            "category_id" => 3,
-            "product_id" => 5,
-            "price" => "275000"
-        ]);
-        Price::create([
-            'category_id' => 4,
-            'product_id' => 6,
-            'price' => "350000"
-        ]);
-        Price::create([
-            'category_id' => 1,
-            'product_id' => 7,
-            'price' => "225000"
-        ]);
-        Price::create([
-            'category_id' => 1,
-            'product_id' => 8,
-            'price' => "399000"
-        ]);
-        Price::create([
-            'category_id' => 2,
-            'product_id' => 9,
-            'price' => "299000"
-        ]);
+
     }
 }

@@ -25,8 +25,8 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="left-images">
-                        <img src="/assets1/images/single-product-01.jpg" alt="">
-                        <img src="/assets1/images/single-product-02.jpg" alt="">
+                        <img src="/assets1/images/{{$product->image_1}}" alt="{{$product->image_1}}">
+                        <img src="/assets1/images/{{$product->image_2}}" alt="{{$product->image_1}}">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -34,27 +34,19 @@
                         <h4>{{$product->product_name}}</h4>
                         <span class="price">{{$product->price}}</span>
                         <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
+                           <h4>pcs:{{$product->pcs}}</h4>
                         </ul>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor
-                            incididunt ut labore.</span>
+                        <span>{{$product->text_1}}</span>
                         <div class="quote">
                             <i class="fa fa-quote-left"></i>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod.</p>
+                            <p>{{$product->text_2 }}</p>
                         </div>
                         <div class="quantity-content">
                             <div class="left-content">
                                 <h6>No. of Orders</h6>
                             </div>
                         </div>
-                        <div class="total">
-                            <h4>Total: $210.00</h4>
-                            <div class="main-border-button"><a href="#">Add To Cart</a></div>
-                        </div>
+                            <livewire:counter :product_id="$product_id" />
                     </div>
                 </div>
             </div>

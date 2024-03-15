@@ -41,10 +41,10 @@ https://templatemo.com/tm-571-hexashop
             }
         }
     </style>
+    @livewirestyles
 </head>
 
 <body>
-
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
         <div class="jumper">
@@ -73,7 +73,7 @@ https://templatemo.com/tm-571-hexashop
                             <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
                             <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
                             <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
-                            <li class="scroll-to-section"><a href="#">Contact Us</a></li>
+                            <li class="scroll-to-section"><a href="/counter">Contact Us</a></li>
                             <li class="scroll-to-section"><a href="#explore">Explore</a></li>
                         </ul>
                         <a class='menu-trigger'>
@@ -187,7 +187,7 @@ https://templatemo.com/tm-571-hexashop
         });
 
     </script>
-
+@livewirescripts
 </body>
 
 </html>
