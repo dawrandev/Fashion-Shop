@@ -15,8 +15,7 @@ class BasketController extends Controller
         $this->basket_products = DB::table('baskets')
             ->join('categories', 'baskets.category_id', '=', 'categories.id')
             ->join('products', 'baskets.product_id', '=', 'products.id')
-            ->join('prices', 'baskets.price_id', '=', 'prices.id')
-            ->select('categories.name as category_name', 'products.name as product_name', 'price', 'products.image', 'baskets.id')
+            ->select('categories.name as category_name', 'products.name as product_name', 'products.image', 'baskets.id', 'products.price')
             ->get();
         $this->summa = $this->CalculateSumma();
     }
@@ -24,14 +23,12 @@ class BasketController extends Controller
     {
         $product = DB::table('products')
             ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->join('prices', 'products.id', '=', 'prices.product_id')
             ->where('products.id', '=', $request->product_id)
-            ->select('categories.id as category_id', 'products.id as product_id', 'products.image', 'prices.id as price_id')
+            ->select('categories.id as category_id', 'products.id as product_id', 'products.image')
             ->first();
         $basket_product = Basket::create([
             'category_id' => $product->category_id,
             'product_id' => $product->product_id,
-            'price_id' => $product->price_id,
             'image' => $product->image
         ]);
         return back()->with('success');

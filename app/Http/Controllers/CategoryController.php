@@ -14,9 +14,8 @@ class CategoryController extends Controller
         $this->category = $request->category_name;
         $this->products = DB::table('products')
             ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->join('prices', 'products.id', '=', 'prices.product_id')
             ->where('categories.name', '=', $request->category_name)
-            ->select('categories.name as category_name', 'products.name as product_name', 'products.image', 'prices.price')
+            ->select('categories.name as category_name', 'products.name as product_name', 'products.image', 'products.price')
             ->paginate(9);
     }
     public function category_product(Request $request)
