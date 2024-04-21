@@ -153,7 +153,7 @@
                                             <li><a href="{{Route('single_product', [$shoe->product_id])}}"><i
                                                         class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="{{Route('basket', [$shoe->product_id])}}"><i
+                                            <li><a href="{{Route('basket', [$shoe->product_id, 1])}}"><i
                                                         class="fa fa-shopping-cart"></i></a>
                                             </li>
                                         </ul>
@@ -164,6 +164,23 @@
                                 <div class="down-content">
                                     <h4>{{$shoe->product_name}}</h4>
                                     <span>{{$shoe->price}}</span>
+                                    <ul class="stars">
+                                        @foreach($options as $option)
+                                        @if($shoe->product_id == $option->product_id)
+                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                               <span>{{$option->size}}</span>
+                                            </div>
+                                        @endif 
+                                        @endforeach 
+                                        <br>
+                                        @foreach($options as $option)
+                                        @if($shoe->product_id == $option->product_id)
+                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                               <figure class="circle" style="background: {{$option->color}};"></figure>
+                                            </div>
+                                        @endif
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                             @endforeach
@@ -200,7 +217,7 @@
                                             <li><a href="{{Route('single_product', [$shirt->product_id])}}"><i
                                                         class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="{{Route('basket', [$shirt->product_id])}}"><i
+                                            <li><a href="{{Route('basket', [$shirt->product_id, 1])}}"><i
                                                         class="fa fa-shopping-cart"></i></a>
                                             </li>
                                         </ul>
@@ -211,6 +228,23 @@
                                 <div class="down-content">
                                     <h4>{{$shirt->product_name}}</h4>
                                     <span>{{$shirt->price}}</span>
+                                    <ul class="stars">
+                                    @foreach($options as $option)
+                                        @if($shirt->product_id == $option->product_id)
+                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                       <span>{{$option->size}}</span>
+                                    </div>
+                                        @endif
+                                        @endforeach
+                                        <br>
+                                        @foreach($options as $option)
+                                        @if($shirt->product_id == $option->product_id)
+                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                       <figure class="circle" style="background: {{$option->color}};"></figure>
+                                    </div>
+                                        @endif
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                             @endforeach
@@ -248,7 +282,7 @@
                                                         class="fa fa-eye"></i></a>
                                             </li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="{{Route('basket', [$pant->product_id])}}"><i
+                                            <li><a href="{{Route('basket', [$pant->product_id, 1])}}"><i
                                                         class="fa fa-shopping-cart"></i></a>
                                             </li>
                                         </ul>
@@ -259,6 +293,23 @@
                                 <div class="down-content">
                                     <h4>{{$pant->product_name}}</h4>
                                     <span>{{$pant->price}}</span>
+                                    <ul class="stars">
+                                    @foreach($options as $option)
+                                        @if($pant->product_id == $option->product_id)
+                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <span>{{$option->size}}</span>
+                                    </div>
+                                        @endif
+                                        @endforeach 
+                                        <br>
+                                        @foreach($options as $option)
+                                        @if($pant->product_id == $option->product_id)
+                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <figure class="circle" style="background: {{$option->color}}"></figure>
+                                    </div>
+                                        @endif
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                             @endforeach
@@ -295,7 +346,7 @@
                                             <li><a href="{{Route('single_product', [$jacket->product_id])}}"><i
                                                         class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="{{Route('basket', [$jacket->product_id])}}"><i
+                                            <li><a href="{{Route('basket', [$jacket->product_id, 1])}}"><i
                                                         class="fa fa-shopping-cart"></i></a>
                                             </li>
                                         </ul>
@@ -305,6 +356,24 @@
                                 <div class="down-content">
                                     <h4>{{$jacket->product_name}}</h4>
                                     <span>{{$jacket->price}}</span>
+                                    <ul class="stars">
+                                    @foreach($options as $option)
+                                        @if($jacket->product_id == $option->product_id)
+                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <span>{{$option->size}}</span>
+                                    
+                                    </div>
+                                        @endif
+                                        @endforeach
+                                        <br>
+                                        @foreach($options as $option)
+                                        @if($jacket->product_id == $option->product_id)
+                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <figure class="circle" style="background: {{$option->color}};"></figure>
+                                    </div>
+                                        @endif
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                             @endforeach
@@ -374,143 +443,4 @@
     </section>
     <!-- ***** Explore Area Ends ***** -->
 
-    <!-- ***** Social Area Starts ***** -->
-    <section class="section" id="social">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
-                        <h2>Social Media</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row images">
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Fashion</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets1/images/instagram-01.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>New</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets1/images/instagram-02.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Brand</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets1/images/instagram-03.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Makeup</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets1/images/instagram-04.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Leather</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets1/images/instagram-05.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Bag</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets1/images/instagram-06.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Social Area Ends ***** -->
-
-    <!-- ***** Subscribe Area Starts ***** -->
-    <div class="subscribe">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="section-heading">
-                        <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
-                    </div>
-                    <form id="subscribe" action="" method="get">
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <fieldset>
-                                    <input name="name" type="text" id="name" placeholder="Your Name" required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-5">
-                                <fieldset>
-                                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*"
-                                        placeholder="Your Email Address" required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-2">
-                                <fieldset>
-                                    <button type="submit" id="form-submit" class="main-dark-button"><i
-                                            class="fa fa-paper-plane"></i></button>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-4">
-                    <div class="row">
-                        <div class="col-6">
-                            <ul>
-                                <li>Store Location:<br><span>Sunny Isles Beach, FL 33160, United States</span></li>
-                                <li>Phone:<br><span>010-020-0340</span></li>
-                                <li>Office Location:<br><span>North Miami Beach</span></li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <ul>
-                                <li>Work Hours:<br><span>07:30 AM - 9:30 PM Daily</span></li>
-                                <li>Email:<br><span>info@company.com</span></li>
-                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a
-                                            href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ***** Subscribe Area Ends ***** -->
 </x-layouts.main>

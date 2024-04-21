@@ -33,15 +33,14 @@
         <div class="container">
             <div class="row">
                 @foreach($products as $product)
-
                 <div class="col-lg-4">
                     <div class="item">
                         <div class="thumb">
                             <div class="hover-content">
                                 <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="{{Route('single_product', [$product->product_id])}}"><i class="fa fa-eye"></i></a></li>
                                     <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="{{Route('basket', [$product->product_id, 1])}}"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <img src="assets1/images/{{$product->image}}" alt="{{$product->image}}" width="300px"
@@ -51,11 +50,21 @@
                             <h4>{{$product->product_name}}</h4>
                             <span>{{$product->price}}</span>
                             <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
+                                @foreach($options as $option)
+                                @if($product->product_id == $option->product_id)
+                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                        <span>{{$option->size}}</span>
+                                    </div>
+                                @endif  
+                                @endforeach
+                                <br>
+                                @foreach($options as $option)
+                                @if($product->product_id == $option->product_id)
+                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                        <figure class="circle" style="background: {{$option->color}}"></figure>
+                                    </div>
+                                @endif  
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -65,10 +74,9 @@
                     @if ($products->lastPage() > 1)
                     <div class="pagination">
                         <ul>
-                            <li class="{{ ($products->currentPage() == 1)? ' disabled' : '' }}">
+                            <li class="{{ ($products->currentPage() == 1) ? ' disabled' : '' }}">
                                 <a href="{{$products->url(1)}}">
                                     < </a>
-
                             </li>
                             @for ($i = 1; $i <= $products->lastPage(); $i++)
                                 <li class="{{ ($products->currentPage() == $i) ? ' active' : '' }}">
@@ -77,7 +85,7 @@
                                 @endfor
                                 <li
                                     class="{{ ($products->currentPage() == $products->lastPage()) ? ' disabled' : '' }}">
-                                    <a href="{{ $products->url($products->currentPage()+1) }}">></a>
+                                    <a href="{{ $products->url($products->currentPage() + 1) }}">></a>
                                 </li>
                         </ul>
                     </div>

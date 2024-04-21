@@ -2,10 +2,10 @@
     <x-slot:title>
         Basket
     </x-slot:title>
-    <div class="container mt-5">
-        <div class="row mt-5">
+    <div class="container mt-3">
+        <div class="row mt-3">
             <div class="col-2"></div>
-            <div class="col-8 mt-5"><br>    
+            <div class="col-8 mt-3"><br>    
             <div class="row mt-5">
                 <div class="col">
                 <h2 style="border" align="start">Basket</h2>
@@ -21,27 +21,40 @@
                             <th scope="col">Image</th>
                             <th scope="col">Category</th>
                             <th scope="col">Product</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Color</th>
                             <th scope="col">Price</th>
+                            <th scope="col">Pcs</th>
                             <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($basket_products as $product)
-                        <tr>
+                        <tr style="margin:auto, text-align:center">
                             <th scope="row">{{$i++}}</th>
                             <td class="img">
-                                <img src="/assets1/images/{{$product->image}}" class="rounded" alt="...">
+                                <img src="/assets1/images/{{$product->image}}" class="rounded" alt="{{$product->image}}">
                             </td>
                             <td>{{$product->category_name}}</td>
                             <td>{{$product->product_name}}</td>
+                            <td>{{$product->size}}</td>
+                            <td>{{$product->color}}</td>
                             <td>{{$product->price}}</td>
+                            <td>{{$product->pcs}}</td>
                             <td><a href="{{Route('delete_basket', [$product->id])}}" class="btn btn-dark">Delete</a></td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
+                <div class="total">
+                    <div class="main-border-button">
+                         <a href="">Add To Card</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-2 mt-5"><br></div>
+            <div class="col-2 mt-5">
+               
+            </div>
         </div>
     </div><br>
 </x-layouts.main>

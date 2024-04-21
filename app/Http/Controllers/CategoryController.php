@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use DB;
 use Illuminate\Http\Request;
 
@@ -23,4 +24,36 @@ class CategoryController extends Controller
         $products = $this->products;
         return view('category_products', compact('products'));
     }
+
+    public function create_category(Request $request)
+    {
+        $validate = $request->validate([
+            'name' => 'required|unique:categories'
+        ]);
+        $category = Category::create([
+            'name' => $request->category_name
+        ]);
+        return back();
+    }
+    public function single_category($category_id)
+    {
+        $single_category = Category::where('id', $category_id)
+            ->get();
+        return view('create_option', compact('single_category'));
+    }
+    public function edit_category(Request $request)
+    {
+        $category = Category::where('id', $request->id)
+            ->update([
+                'name' => $request->name
+            ]);
+        return back();
+    }
+    public function delete_category($category_id)
+    {
+        $delete_category = Category::where('id', $category_id)
+            ->delete();
+        return back();
+    }
 }
+

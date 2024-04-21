@@ -10,11 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
-
     <title>Home page</title>
-
-
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets1/css/bootstrap.min.css')}}">
 
@@ -39,6 +35,13 @@ https://templatemo.com/tm-571-hexashop
                 width: 100px;
                 height: 100px;
             }
+        }
+        .circle{
+            display: block;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            margin: 0;
         }
     </style>
     @livewirestyles
@@ -73,7 +76,7 @@ https://templatemo.com/tm-571-hexashop
                             <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
                             <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
                             <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
-                            <li class="scroll-to-section"><a href="/counter">Contact Us</a></li>
+                            <li class="scroll-to-section"><a href="#">Contact Us</a></li>
                             <li class="scroll-to-section"><a href="#explore">Explore</a></li>
                         </ul>
                         <a class='menu-trigger'>
@@ -97,26 +100,28 @@ https://templatemo.com/tm-571-hexashop
                             <img src="/assets1/images/white-logo.png" alt="hexashop ecommerce templatemo">
                         </div>
                         <ul>
-                            <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
-                            <li><a href="#">hexashop@company.com</a></li>
-                            <li><a href="#">010-020-0340</a></li>
+                            <li><a href="https://maps.app.goo.gl/7ShSsxdZYqAAw4Wc8">Nukus, Republic Karakalpakstan, Uzbekistan</a></li>
+                            <li><a href="#">hexashop@company.uz</a></li>
+                            <li><a href="#">+998 93 365 13 02</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <h4>Shopping &amp; Categories</h4>
                     <ul>
-                        <li><a href="#">Men’s Shopping</a></li>
-                        <li><a href="#">Women’s Shopping</a></li>
-                        <li><a href="#">Kid's Shopping</a></li>
+                        <li><a href="{{route('category_product', 'shoe')}}">Shoes</a></li>
+                        <li><a href="{{Route('category_product', 'shirt')}}">Shirts</a></li>
+                        <li><a href="{{Route('category_product', 'pant')}}">Pants</a></li>
+                        <li><a href="{{Route('category_product', 'jacket')}}">Jackets</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><a href="#">Homepage</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="{{Route('home_page')}}">Homepage</a></li>
+                        <li><a href="{{Route('home_page')}}">Products</a></li>
+                        <li><a href="{{Route('about_page')}}">About Us</a></li>
+                        <li><a href="{{Route('basket_page')}}">Basket</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
