@@ -37,8 +37,8 @@ Route::controller(ProductController::class)->group(function () {
 Route::controller(CategoryController::class)->group(function () {
     Route::get('/category_product/{category_name}', 'category_product')->name('category_product');
     Route::post('/create_category', 'create_category')->name('create_category');
-    Route::get('/single_category', 'single_category')->name('single_category');
-    Route::get('/edit_category/{{category_id}}', 'edit_category')->name('edit_category');
+    Route::post('/edit_category', 'edit_category')->name('edit_category');
+    Route::get('/delete_category/{category_id}', 'delete_category')->name('delete_category');
 });
 Route::controller(BasketController::class)->group(function () {
     Route::get('/basket/{product_id}/{count}', 'basket')->name('basket');
@@ -70,6 +70,7 @@ Route::controller(AdminController::class)->group(function () {
 
 Route::controller(OptionController::class)->group(function () {
     Route::get('/create_option_page', 'create_option_page')->name('create_option_page');
+    Route::get('/single_category/{category_id}', 'single_category')->name('single_category');
 });
 
 Route::middleware([LogUserIp::class])->group(function () {

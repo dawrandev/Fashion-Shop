@@ -12,7 +12,10 @@
               <div class="card-body" style="text-align: center;">
                 <form action="{{Route('create_category')}}" method="post">
                 @csrf
-                  <input type="text" class="form-control" name="category_name" id="" placeholder="Category"><br>
+                  <input type="text" class="form-control" name="category_name" placeholder="Category"><br>
+                  @error('category_name')
+                  <li style="color:red"">{{$message}}</li>
+                  @enderror
                   <input type="submit" class="btn btn-primary" value="Create">
                 </form>
               </div>
@@ -64,22 +67,28 @@
                         @foreach($categories as $category)
                         <tr>
                           <td>{{$c++}}</td>
-                          @if($single_category != null)
-                          <td>
-                          <form action="{{Route('edit_category', [$category->id])}}" method="post">
-                          @csrf
-                            <input type="text" name="single_category" class="form-control" value="{{$single_category}}">
-                            <input type="submit" value="Update" class="btn btn-primary">
-                          </form>
-                          </td>
-                          @endif
                           <td>{{$category->name}}</td>
-                          <td><a href="{{Route('single_category', [$category->id])}}" class="btn btn-primary">Edit</a>
-                          <a href="#" class="btn btn-danger">Delete</a>
+                          <td><a href="{{Route('single_category', $category->id)}}" class="btn btn-primary">Edit</a>
+                          <a href="{{Route('delete_category', $category->id)}}" class="btn btn-danger">Delete</a>
                           </td>
                         </tr>
                         @endforeach
                       </table>
+                      @if($single_option != null)
+                      <form action="{{Route('edit_category')}}" method="POST">
+                      @csrf
+                        <div class="row">
+                          <div class="col-8">
+                            <input type="hidden" name="category_id" value="{{$single_option->id}}">
+                            <input type="text" name="category_name" class="form-control" value="{{$single_option->name}}">
+                          </div>
+                          <div class="col-2">
+                            <input type="submit" value="Update" class="btn btn-primary">
+                          </div>
+                        </div>
+                      </form>
+                      @endif
+                      <br>
                     </div>
                   </div>
                   {{$categories->links()}}
@@ -144,4 +153,7 @@
           </div>
       </div>
 </div>
+
+            </div>
+          </div>
 </x-layouts.admin>

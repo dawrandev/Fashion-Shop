@@ -35,17 +35,11 @@ class CategoryController extends Controller
         ]);
         return back();
     }
-    public function single_category($category_id)
-    {
-        $single_category = Category::where('id', $category_id)
-            ->get();
-        return view('create_option', compact('single_category'));
-    }
     public function edit_category(Request $request)
     {
-        $category = Category::where('id', $request->id)
+        $category = Category::where('id', $request->category_id)
             ->update([
-                'name' => $request->name
+                'name' => $request->category_name
             ]);
         return back();
     }
