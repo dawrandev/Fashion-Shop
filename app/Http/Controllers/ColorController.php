@@ -15,20 +15,20 @@ class ColorController extends Controller
         $color = Color::create([
             'color' => $request->color
         ]);
-        return back();
+        return redirect()->route('create_option_page');
     }
-    public function update_color(Request $request)
+    public function edit_color(Request $request)
     {
-        $color = Color::where('id', $request->id)
+        $color = Color::where('id', $request->color_id)
             ->update([
-                'color' => $request->color
+                'color' => $request->new_color
             ]);
-        return back();
+        return redirect()->route('create_option_page');
     }
     public function delete_color($color_id)
     {
         $delete_color = Color::where('id', $color_id)
             ->delete();
-        return back();
+        return redirect()->route('create_option_page');
     }
 }

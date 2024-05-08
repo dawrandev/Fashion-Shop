@@ -34,7 +34,7 @@ class ProductController extends Controller
         $i = 1;
         $options = $this->options;
         $products = $this->products;
-        return view('products', compact('products', 'options', 'i'));
+        return view('client.products', compact('products', 'options', 'i'));
     }
     public function single_product(Request $request)
     {
@@ -57,7 +57,7 @@ class ProductController extends Controller
             $summa += $piece->pcs;
             $pcs = $summa;
         }
-        return view('single_product', compact('single_product', 'product_id', 'options', 'pcs'));
+        return view('client.single_product', compact('single_product', 'product_id', 'options', 'pcs'));
     }
 
     public function create_product_page()

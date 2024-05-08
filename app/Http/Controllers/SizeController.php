@@ -15,20 +15,20 @@ class SizeController extends Controller
         Size::create([
             'size' => $request->size
         ]);
-        return back();
+        return redirect()->route('create_option_page');
     }
     public function edit_size(Request $request)
     {
         $size = Size::where('id', $request->id)
             ->update([
-                'size' => $request->size
+                'size' => $request->new_size
             ]);
-        return back();
+        return redirect()->route('create_option_page');
     }
     public function delete_size($size_id)
     {
         $delete_size = Size::where('id', $size_id)
             ->delete();
-        return back();
+        return redirect()->route('create_option_page');
     }
 }

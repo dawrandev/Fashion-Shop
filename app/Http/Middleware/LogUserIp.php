@@ -26,7 +26,6 @@ class LogUserIp
             $user->save();
         }
         Auth::login($user);
-
         return $next($request);
     }
 }

@@ -21,13 +21,12 @@
     <link rel="stylesheet" href="{{URL::asset('assets1/css/owl-carousel.css')}}">
 
     <link rel="stylesheet" href="{{URL::asset('assets1/css/lightbox.css')}}">
-    <!--
+
 
 TemplateMo 571 Hexashop
 
 https://templatemo.com/tm-571-hexashop
 
--->
     <style>
         .img {
             img {
@@ -59,7 +58,7 @@ https://templatemo.com/tm-571-hexashop
     <!-- ***** Preloader End ***** -->
 
 
-    <!-- ***** Header Area Start ***** -->
+    <!-- ***** Header Area Start ***** -->  
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
@@ -73,15 +72,15 @@ https://templatemo.com/tm-571-hexashop
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="{{Route('home_page')}}" class="active">Home</a></li>
+                            
                             <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
                             <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
                             <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
                             <li class="scroll-to-section"><a href="#">Contact Us</a></li>
                             <li class="scroll-to-section"><a href="#explore">Explore</a></li>
+                            <li class="scroll-to-section"><a href="{{Route('profile')}}">Profile</a></li>
                         </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
+                        
                         <!-- ***** Menu End ***** -->
                     </nav>
                 </div>
@@ -106,15 +105,7 @@ https://templatemo.com/tm-571-hexashop
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <h4>Shopping &amp; Categories</h4>
-                    <ul>
-                        <li><a href="{{route('category_product', 'shoe')}}">Shoes</a></li>
-                        <li><a href="{{Route('category_product', 'shirt')}}">Shirts</a></li>
-                        <li><a href="{{Route('category_product', 'pant')}}">Pants</a></li>
-                        <li><a href="{{Route('category_product', 'jacket')}}">Jackets</a></li>
-                    </ul>
-                </div>
+                
                 <div class="col-lg-3">
                     <h4>Useful Links</h4>
                     <ul>
@@ -137,9 +128,9 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-12">
                     <div class="under-footer">
                         <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved.
-
+                            
                             <br>Design: <a href="https://templatemo.com" target="_parent"
-                                title="free css templates">TemplateMo</a>
+                            title="free css templates">TemplateMo</a>
                         </p>
                         <ul>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -154,11 +145,11 @@ https://templatemo.com/tm-571-hexashop
     </footer>
     <!-- jQuery -->
     <script src="{{URL::asset('assets1/js/jquery-2.1.0.min.js')}}"></script>
-
+    
     <!-- Bootstrap -->
     <script src="{{URL::asset('assets1/js/popper.js')}}"></script>
     <script src="{{URL::asset('assets1/js/bootstrap.min.js')}}"></script>
-
+    
     <!-- Plugins -->
     
     <script src="{{URL::asset('assets1/js/owl-carousel.js')}}"></script>
@@ -171,12 +162,10 @@ https://templatemo.com/tm-571-hexashop
     <script src="{{URL::asset('assets1/js/slick.js')}}"></script>
     <script src="{{URL::asset('assets1/js/lightbox.js')}}"></script>
     <script src="{{URL::asset('assets1/js/isotope.js')}}"></script>
-
+    
     <!-- Global Init -->
     <script src="{{URL::asset('assets1/js/custom.js')}}"></script>
-
     <script>
-
         $(function () {
             var selectedClass = "";
             $("p").click(function () {
@@ -187,12 +176,9 @@ https://templatemo.com/tm-571-hexashop
                     $("." + selectedClass).fadeIn();
                     $("#portfolio").fadeTo(50, 1);
                 }, 500);
-
             });
         });
-
+        @livewirescripts
     </script>
-@livewirescripts
 </body>
-
 </html>

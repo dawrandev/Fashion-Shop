@@ -22,7 +22,7 @@ class CategoryController extends Controller
     public function category_product(Request $request)
     {
         $products = $this->products;
-        return view('category_products', compact('products'));
+        return view('client.category_products', compact('products'));
     }
 
     public function create_category(Request $request)
@@ -31,17 +31,17 @@ class CategoryController extends Controller
             'name' => 'required|unique:categories'
         ]);
         $category = Category::create([
-            'name' => $request->category_name
+            'name' => $request->name
         ]);
-        return back();
+        return redirect()->route('create_option_page');
     }
     public function edit_category(Request $request)
     {
         $category = Category::where('id', $request->category_id)
             ->update([
-                'name' => $request->category_name
+                'name' => $request->new_category
             ]);
-        return back();
+        return redirect()->route('create_option_page');
     }
     public function delete_category($category_id)
     {
