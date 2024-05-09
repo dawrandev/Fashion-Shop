@@ -19,7 +19,7 @@ class BasketController extends Controller
             ->join('products', 'baskets.product_id', '=', 'products.id')
             ->join('sizes', 'baskets.size_id', '=', 'sizes.id')
             ->join('colors', 'baskets.color_id', '=', 'colors.id')
-            ->select('baskets.id', 'products.id as product_id', 'categories.name as category_name', 'products.name as product_name', 'sizes.size', 'colors.color', 'products.image', 'products.price', 'baskets.pcs')
+            ->select('baskets.id', 'products.id as product_id', 'categories.name as category_name', 'products.name as product_name', 'sizes.size', 'colors.color', 'products.image', 'products.price', 'baskets.pcs', 'size_id', 'color_id')
             ->get();
         $this->summa = $this->CalculateSumma();
     }

@@ -8,6 +8,7 @@ use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OptionController;
 use App\Http\Controllers\ProductController;
@@ -65,10 +66,12 @@ Route::controller(ClientController::class)->group(function () {
     Route::get('/registration_page', 'registration_page')->name('registration_page');
     Route::get('/profile', 'profile')->name('profile');
     Route::post('/update_client', 'update_client')->name('update_client');
-    Route::get('/my_purchases_page', 'my_purchases_page')->name('my_purchases_page');
 });
 Route::controller(CardController::class)->group(function () {
-    Route::get('/card_page/{product_id}', 'card_page')->name('card_page');
+    Route::get('/card_page', 'card_page')->name('card_page');
+});
+Route::controller(HistoryController::class)->group(function () {
+    Route::get('/histories', 'histories')->name('histories');
 });
 Route::get('/price', [Counter::class, 'price'])->name('price');
 

@@ -69,25 +69,7 @@ https://templatemo.com/tm-571-hexashop
                             <img src="/assets1/images/logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="{{Route('home_page')}}" class="active">Home</a></li>
-                            
-                            <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
-                            <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
-                            <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
-                            <li class="scroll-to-section"><a href="#">Contact Us</a></li>
-                            <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-                            <li class="scroll-to-section"><a href="{{Route('profile')}}">Profile</a></li>
-                        </ul>
                         
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
     {{$slot}}
     <!-- ***** Footer Start ***** -->
     <footer>

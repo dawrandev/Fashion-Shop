@@ -36,7 +36,7 @@ class ClientController extends Controller
         ]);
         $user = User::where('ip_address', Auth::user()->ip_address)->first();
         Auth::login($user);
-        return redirect()->route('card_page');
+        return redirect()->route('basket_page');
     }
     public function profile()
     {
@@ -60,8 +60,5 @@ class ClientController extends Controller
             ]);
         return redirect()->route('profile');
     }
-    public function my_purchases_page()
-    {
-        return view('client.my_purchases');
-    }
+
 }

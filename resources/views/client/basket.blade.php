@@ -2,6 +2,24 @@
     <x-slot:title>
         Basket
     </x-slot:title>
+    <ul class="nav">
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
+
+        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}" class="active">Basket</a></li>
+        <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
+        <li class="scroll-to-section"><a href="#">Contact Us</a></li>
+        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
+        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profile</a></li>
+    </ul>
+
+    <!-- ***** Menu End ***** -->
+    </nav>
+    </div>
+    </div>
+    </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
     <div class="container mt-3">
         <div class="row mt-3">
             <div class="col-2"></div>
@@ -52,7 +70,9 @@
                 </table>
                 <div class="total">
                     <div class="main-border-button">
-                        <a href="{{Route('card_page', $product->id)}}">Add To Card</a>
+                        <a href="{{Route('card_page')}}">
+                            Add To Card
+                        </a>
                     </div>
                 </div>
             </div>

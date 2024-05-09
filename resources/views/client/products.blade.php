@@ -2,6 +2,25 @@
     <x-slot:title>
         All Products
     </x-slot:title>
+    <!-- ***** Menu Start ***** -->
+    <ul class="nav">
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
+
+        <li class="scroll-to-section"><a href="{{Route('products_page')}}" class="active">Products</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
+        <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
+        <li class="scroll-to-section"><a href="#">Contact Us</a></li>
+        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
+        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profile</a></li>
+    </ul>
+
+    <!-- ***** Menu End ***** -->
+    </nav>
+    </div>
+    </div>
+    </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
     <!-- ***** Main Banner Area Start ***** -->
     <div class="page-heading" id="top">
         <div class="container">
@@ -38,9 +57,11 @@
                         <div class="thumb">
                             <div class="hover-content">
                                 <ul>
-                                    <li><a href="{{Route('single_product', [$product->product_id])}}"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="{{Route('single_product', [$product->product_id])}}"><i
+                                                class="fa fa-eye"></i></a></li>
                                     <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="{{Route('basket', [$product->product_id, 1])}}"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="{{Route('basket', [$product->product_id, 1])}}"><i
+                                                class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <img src="assets1/images/{{$product->image}}" alt="{{$product->image}}" width="300px"
@@ -52,19 +73,17 @@
                             <ul class="stars">
                                 @foreach($options as $option)
                                 @if($product->product_id == $option->product_id)
-                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                        <span>{{$option->size}}</span>
-                                    </div>
-                                @endif  
-                                @endforeach
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <span>{{$option->size}}</span>
+                                </div>
+                                @endif                                  @endforeach
                                 <br>
                                 @foreach($options as $option)
                                 @if($product->product_id == $option->product_id)
-                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                        <figure class="circle" style="background: {{$option->color}}"></figure>
-                                    </div>
-                                @endif  
-                                @endforeach
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <figure class="circle" style="background: {{$option->color}}"></figure>
+                                </div>
+                                @endif                                  @endforeach
                             </ul>
                         </div>
                     </div>
@@ -72,23 +91,22 @@
                 @endforeach
                 <div class="col-lg-12">
                     @if ($products->lastPage() > 1)
-                    <div class="pagination">
-                        <ul>
-                            <li class="{{ ($products->currentPage() == 1) ? ' disabled' : '' }}">
-                                <a href="{{$products->url(1)}}">
-                                    < </a>
-                            </li>
-                            @for ($i = 1; $i <= $products->lastPage(); $i++)
-                                <li class="{{ ($products->currentPage() == $i) ? ' active' : '' }}">
-                                    <a href="{{ $products->url($i) }}">{{$i}}</a>
+                        <div class="pagination">
+                            <ul>
+                                <li class="{{ ($products->currentPage() == 1) ? ' disabled' : '' }}">
+                                    <a href="{{$products->url(1)}}">
+                                        < </a>
                                 </li>
+                                @for ($i = 1; $i <= $products->lastPage(); $i++)
+                                    <li class="{{ ($products->currentPage() == $i) ? ' active' : '' }}">
+                                        <a href="{{ $products->url($i) }}">{{$i}}</a>
+                                    </li>
                                 @endfor
-                                <li
-                                    class="{{ ($products->currentPage() == $products->lastPage()) ? ' disabled' : '' }}">
+                                <li class="{{ ($products->currentPage() == $products->lastPage()) ? ' disabled' : '' }}">
                                     <a href="{{ $products->url($products->currentPage() + 1) }}">></a>
                                 </li>
-                        </ul>
-                    </div>
+                            </ul>
+                        </div>
                     @endif
                 </div>
             </div>

@@ -1,22 +1,40 @@
 <x-layouts.main>
+    <!-- ***** Menu Start ***** -->
+    <ul class="nav">
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
+
+        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
+        <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
+        <li class="scroll-to-section"><a href="#">Contact Us</a></li>
+        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
+        <li class="scroll-to-section"><a href="{{Route('profile')}}" class="active">Profile</a></li>
+    </ul>
+
+    <!-- ***** Menu End ***** -->
+    </nav>
+    </div>
+    </div>
+    </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-3"></div>
             <div class="col-6 mt-5">
-                <div class="card">
+                <div class="card w-100 mb-3">
                     <div class="card-body">
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="true" href="#">Active</a>
+                                    <a class="nav-link active" aria-current="true" href="#">Profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="true" href="{{Route('my_purchases_page')}}">My
-                                        purchases</a>
+                                    <a class="nav-link" aria-current="true" href="{{Route('histories')}}">Histories</a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body w-100 mb-3">
                             <h5 class="card-title">Profile Documents</h5>
                             <form action="{{Route('update_client')}}" method="post">
                                 @csrf
