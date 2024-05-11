@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Basket;
+use App\Models\Category;
 use App\Models\Piece;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,10 +57,11 @@ class BasketController extends Controller
     }
     public function basket_page()
     {
+        $categories = Category::all();
         $summa = $this->summa;
         $basket_products = $this->basket_products;
         $i = 1;
-        return view('client.basket', compact('basket_products', 'i', 'summa'));
+        return view('client.basket', compact('basket_products', 'i', 'summa', 'categories'));
     }
     public function delete_basket(Request $request)
     {

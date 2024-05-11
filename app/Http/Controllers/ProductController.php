@@ -15,12 +15,12 @@ class ProductController extends Controller
 {
     public $products;
     public $options;
+    public $categories;
     public function __construct()
     {
         $this->products = DB::table('products')
             ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->join('pieces', 'products.id', '=', 'pieces.product_id')
-            ->select('categories.name as category_name', 'products.name as product_name', 'image', 'price', 'products.id as product_id', 'pieces.pcs')
+            ->select('products.id as product_id', 'categories.name as category_name', 'products.name as product_name', 'image', 'price')
             ->paginate(9);
         $this->options = DB::table('options')
             ->join('products', 'options.product_id', '=', 'products.id')
@@ -28,16 +28,19 @@ class ProductController extends Controller
             ->join('colors', 'options.color_id', '=', 'colors.id')
             ->select('sizes.*', 'colors.*', 'products.id as product_id')
             ->get();
+        $this->categories = Category::all();
     }
     public function products_page()
     {
+        $categories = $this->categories;
         $i = 1;
         $options = $this->options;
         $products = $this->products;
-        return view('client.products', compact('products', 'options', 'i'));
+        return view('client.products', compact('products', 'options', 'i', 'categories'));
     }
     public function single_product(Request $request)
     {
+        $categories = $this->categories;
         $product_id = $request->product_id;
         $single_product = DB::table('products')
             ->join('categories', 'products.category_id', '=', 'categories.id')
@@ -57,7 +60,8 @@ class ProductController extends Controller
             $summa += $piece->pcs;
             $pcs = $summa;
         }
-        return view('client.single_product', compact('single_product', 'product_id', 'options', 'pcs'));
+        $categories = Category::all();
+        return view('client.single_product', compact('single_product', 'product_id', 'options', 'pcs', 'categories'));
     }
 
     public function create_product_page()

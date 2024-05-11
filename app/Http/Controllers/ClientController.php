@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Client;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class ClientController extends Controller
 
     public function registration_page()
     {
-        return view('client.register');
+        $categories = Category::all();
+        return view('client.register', compact('categories'));
     }
     public function registration(Request $request)
     {
@@ -40,8 +42,9 @@ class ClientController extends Controller
     }
     public function profile()
     {
+        $categories = Category::all();
         $client_documents = Client::where('user_id', Auth::user()->id)->get();
-        return view('client.profile', compact('client_documents'));
+        return view('client.profile', compact('client_documents', 'categories'));
     }
     public function update_client(Request $request)
     {

@@ -4,7 +4,14 @@
     </x-slot:title>
     <ul class="nav">
         <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
-
+        <li class="submenu">
+            <a href="">Categories</a>
+            <ul>
+                @foreach ($categories as $category)
+                    <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
+                @endforeach
+            </ul>
+        </li>
         <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
         <li class="scroll-to-section"><a href="{{Route('basket_page')}}" class="active">Basket</a></li>
         <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
@@ -70,7 +77,7 @@
                 </table>
                 <div class="total">
                     <div class="main-border-button">
-                        <a href="{{Route('card_page')}}">
+                        <a href="{{Route('card_page', $summa)}}">
                             Add To Card
                         </a>
                     </div>

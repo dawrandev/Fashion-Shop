@@ -5,7 +5,14 @@
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
         <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
-
+        <li class="submenu">
+            <a href="">Categories</a>
+            <ul>
+                @foreach ($categories as $category)
+                    <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
+                @endforeach
+            </ul>
+        </li>
         <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
         <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
         <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>

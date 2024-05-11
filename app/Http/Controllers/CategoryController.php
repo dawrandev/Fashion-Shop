@@ -10,19 +10,15 @@ class CategoryController extends Controller
 {
     public $products;
     public $category;
-    public function __construct(request $request)
+    public function category_product($category_id)
     {
-        $this->category = $request->category_name;
-        $this->products = DB::table('products')
+        $categories = Category::all();
+        $products = DB::table('products')
             ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->where('categories.name', '=', $request->category_name)
+            ->where('categories.id', '=', $category_id)
             ->select('categories.name as category_name', 'products.name as product_name', 'products.image', 'products.price')
             ->paginate(9);
-    }
-    public function category_product(Request $request)
-    {
-        $products = $this->products;
-        return view('client.category_products', compact('products'));
+        return view('client.category_products', compact('products', 'categories'));
     }
 
     public function create_category(Request $request)

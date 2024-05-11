@@ -19,6 +19,8 @@ return new class extends Migration {
             $table->integer('color_id');
             $table->string('image');
             $table->string('pcs');
+            $table->string('summa');
+            $table->string('date');
             $table->timestamps();
         });
     }

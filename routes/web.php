@@ -38,7 +38,7 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/create_product_page', 'create_product_page')->name('create_product_page');
 });
 Route::controller(CategoryController::class)->group(function () {
-    Route::get('/category_product/{category_name}', 'category_product')->name('category_product');
+    Route::get('/category_product/{category_id}', 'category_product')->name('category_product');
     Route::post('/create_category', 'create_category')->name('create_category');
     Route::post('/edit_category', 'edit_category')->name('edit_category');
     Route::get('/delete_category/{category_id}', 'delete_category')->name('delete_category');
@@ -68,7 +68,7 @@ Route::controller(ClientController::class)->group(function () {
     Route::post('/update_client', 'update_client')->name('update_client');
 });
 Route::controller(CardController::class)->group(function () {
-    Route::get('/card_page', 'card_page')->name('card_page');
+    Route::get('/card_page/{summa}', 'card_page')->name('card_page');
 });
 Route::controller(HistoryController::class)->group(function () {
     Route::get('/histories', 'histories')->name('histories');
@@ -84,7 +84,8 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::controller(AdminController::class)->group(function () {
-    Route::get('/table', 'table')->name('table');
+    Route::get('/clients_table', 'clients_table')->name('clients_table');
+    Route::get('/client_products/{user_id}', 'client_products')->name('client_products');
 });
 
 Route::controller(OptionController::class)->group(function () {

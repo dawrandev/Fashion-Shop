@@ -2,7 +2,14 @@
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
         <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
-
+        <li class="submenu">
+            <a href="">Categories</a>
+            <ul>
+                @foreach ($categories as $category)
+                    <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
+                @endforeach
+            </ul>
+        </li>
         <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
         <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
         <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
@@ -20,8 +27,8 @@
     <!-- ***** Header Area End ***** -->
     <div class="container mt-5">
         <div class="row mt-5">
-            <div class="col-3"></div>
-            <div class="col-6 mt-5">
+            <div class="col-1"></div>
+            <div class="col-10 mt-5">
                 <div class="card w-100 mb-3">
                     <div class="card-body">
                         <div class="card-header">
@@ -68,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3"></div>
+            <div class="col-1"></div>
         </div>
     </div>
 </x-layouts.main>

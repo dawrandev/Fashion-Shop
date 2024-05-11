@@ -20,18 +20,21 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Category::create([
-            'name' => 'shoe'
+            'name' => 'shoe',
+            'image_baner' => 'baner-right-image-01.jpg'
         ]);
         Category::create([
-            'name' => 'shirt'
+            'name' => 'shirt',
+            'image_baner' => 'baner-right-image-02.jpg'
         ]);
         Category::create([
-            'name' => 'pant'
+            'name' => 'pant',
+            'image_baner' => 'baner-right-image-03.jpg'
         ]);
         Category::create([
-            'name' => 'jacket'
+            'name' => 'jacket',
+            'image_baner' => 'baner-right-image-04.jpg'
         ]);
-
         Product::create([
             'category_id' => 1,
             'name' => 'Nike',
@@ -148,212 +151,212 @@ class DatabaseSeeder extends Seeder
             'size' => '38'
         ]);
         Color::create([
-            'color'=>'blue'
+            'color' => 'blue'
         ]);
         Color::create([
-            'color'=>'red'
+            'color' => 'red'
         ]);
         Piece::create([
             'category_id' => 1,
             'product_id' => 1,
             'size_id' => 4,
-            'color_id'=>1,
+            'color_id' => 1,
             'pcs' => 4
         ]);
         Piece::create([
             'category_id' => 1,
             'product_id' => 1,
             'size_id' => 5,
-            'color_id'=>1,
+            'color_id' => 1,
             'pcs' => 5
-        ]); 
+        ]);
         Piece::create([
             'category_id' => 1,
             'product_id' => 1,
             'size_id' => 4,
-            'color_id'=>2,
+            'color_id' => 2,
             'pcs' => 6
-        ]); 
+        ]);
         Piece::create([
             'category_id' => 1,
             'product_id' => 1,
             'size_id' => 5,
-            'color_id'=>2,
+            'color_id' => 2,
             'pcs' => 7
         ]);
         Piece::create([
             'category_id' => 2,
             'product_id' => 2,
-            'color_id'=>2,
+            'color_id' => 2,
             'size_id' => 1,
             'pcs' => 7
         ]);
         Piece::create([
             'category_id' => 2,
             'product_id' => 3,
-            'color_id'=>1,
+            'color_id' => 1,
             'size_id' => 1,
             'pcs' => 4
         ]);
         Piece::create([
             'category_id' => 3,
             'product_id' => 4,
-            'color_id'=>2,
+            'color_id' => 2,
             'size_id' => 3,
             'pcs' => 8
         ]);
         Piece::create([
             'category_id' => 3,
             'product_id' => 5,
-            'color_id'=>1,
+            'color_id' => 1,
             'size_id' => 2,
             'pcs' => 2
         ]);
         Piece::create([
             'category_id' => 4,
             'product_id' => 6,
-            'color_id'=>2,
+            'color_id' => 2,
             'size_id' => 2,
             'pcs' => 10
         ]);
         Piece::create([
             'category_id' => 1,
             'product_id' => 7,
-            'color_id'=>1,
+            'color_id' => 1,
             'size_id' => 5,
             'pcs' => 5
         ]);
         Piece::create([
             'category_id' => 1,
             'product_id' => 8,
-            'color_id'=>2,
+            'color_id' => 2,
             'size_id' => 4,
             'pcs' => 5
         ]);
         Piece::create([
             'category_id' => 1,
             'product_id' => 9,
-            'color_id'=>1,
+            'color_id' => 1,
             'size_id' => 5,
             'pcs' => 5
         ]);
         Piece::create([
             'category_id' => 3,
             'product_id' => 10,
-            'color_id'=>2,
+            'color_id' => 2,
             'size_id' => 1,
             'pcs' => 5
         ]);
         Option::create([
             'product_id' => 1,
             'size_id' => 4,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 1,
             'size_id' => 5,
-            'color_id'=>2
+            'color_id' => 2
 
         ]);
         Option::create([
             'product_id' => 2,
             'size_id' => 1,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 2,
             'size_id' => 2,
-            'color_id'=>2
+            'color_id' => 2
         ]);
         Option::create([
             'product_id' => 2,
             'size_id' => 3,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 3,
             'size_id' => 1,
-            'color_id'=>2
+            'color_id' => 2
         ]);
         Option::create([
             'product_id' => 3,
             'size_id' => 2,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 3,
             'size_id' => 3,
-            'color_id'=>2
+            'color_id' => 2
         ]);
         Option::create([
             'product_id' => 4,
             'size_id' => 1,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 4,
             'size_id' => 2,
-            'color_id'=>2
+            'color_id' => 2
         ]);
         Option::create([
             'product_id' => 4,
             'size_id' => 3,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 5,
             'size_id' => 1,
-            'color_id'=>2
+            'color_id' => 2
         ]);
         Option::create([
             'product_id' => 5,
             'size_id' => 2,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 5,
             'size_id' => 3,
-            'color_id'=>2
+            'color_id' => 2
         ]);
         Option::create([
             'product_id' => 6,
             'size_id' => 1,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 6,
             'size_id' => 2,
-            'color_id'=>2
+            'color_id' => 2
         ]);
         Option::create([
             'product_id' => 6,
             'size_id' => 3,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 7,
             'size_id' => 4,
-            'color_id'=>2
+            'color_id' => 2
         ]);
         Option::create([
             'product_id' => 7,
             'size_id' => 5,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 8,
             'size_id' => 4,
-            'color_id'=>2
+            'color_id' => 2
         ]);
         Option::create([
             'product_id' => 9,
             'size_id' => 2,
-            'color_id'=>1
+            'color_id' => 1
         ]);
         Option::create([
             'product_id' => 9,
             'size_id' => 3,
-            'color_id'=>2
+            'color_id' => 2
         ]);
     }
 }
