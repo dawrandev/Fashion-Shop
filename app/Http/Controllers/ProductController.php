@@ -63,9 +63,15 @@ class ProductController extends Controller
         $categories = Category::all();
         return view('client.single_product', compact('single_product', 'product_id', 'options', 'pcs', 'categories'));
     }
-
-    public function create_product_page()
+    public function admin_products_page()
     {
-        return view('admin.create_product');
+        $categories = Category::all();
+        $products = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->select('categories.id as category_id', 'products.id as product_id', 'categories.name as category_name', 'products.name as product_name', 'image', 'products.price')
+            ->paginate(9);
+        return view('admin.products', compact('products', 'categories'));
     }
+
+
 }

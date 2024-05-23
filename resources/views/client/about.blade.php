@@ -1,9 +1,9 @@
 <x-layouts.main>
     <x-slot:title>
         About
-</x-slot:title>
-     <!-- ***** Main Banner Area Start ***** -->
-     <div class="page-heading about-page-heading" id="top">
+    </x-slot:title>
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading about-page-heading" id="top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -23,17 +23,22 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="left-image">
-                        <img src="/assets1/images/about-left-image.jpg" alt="">
+                        <img src="/storage/images/about-left-image.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="right-content">
                         <h4>About Us &amp; Our Skills</h4>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</span>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor
+                            incididunt ut labore.</span>
                         <div class="quote">
-                            <i class="fa fa-quote-left"></i><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod kon tempor incididunt ut labore.</p>
+                            <i class="fa fa-quote-left"></i>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod kon tempor
+                                incididunt ut labore.</p>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt
+                            ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip.</p>
                         <ul>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -70,7 +75,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <img src="/assets1/images/team-member-01.jpg">
+                            <img src="/storage/images/team-member-01.jpg">
                         </div>
                         <div class="down-content">
                             <h4>Ragnar Lodbrok</h4>
@@ -91,7 +96,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <img src="/assets1/images/team-member-02.jpg">
+                            <img src="/storage/images/team-member-02.jpg">
                         </div>
                         <div class="down-content">
                             <h4>Ragnar Lodbrok</h4>
@@ -112,7 +117,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <img src="/assets1/images/team-member-03.jpg">
+                            <img src="/storage/images/team-member-03.jpg">
                         </div>
                         <div class="down-content">
                             <h4>Ragnar Lodbrok</h4>
@@ -138,22 +143,25 @@
                 <div class="col-lg-4">
                     <div class="service-item">
                         <h4>Synther Vaporware</h4>
-                        <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut labore, et dolore quis ipsum suspend.</p>
-                        <img src="/assets1/images/service-01.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut
+                            labore, et dolore quis ipsum suspend.</p>
+                        <img src="/storage/images/service-01.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="service-item">
                         <h4>Locavore Squidward</h4>
-                        <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut labore, et dolore quis ipsum suspend.</p>
-                        <img src="/assets1/images/service-02.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut
+                            labore, et dolore quis ipsum suspend.</p>
+                        <img src="/storage/images/service-02.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="service-item">
                         <h4>Health Gothfam</h4>
-                        <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut labore, et dolore quis ipsum suspend.</p>
-                        <img src="/assets1/images/service-03.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut
+                            labore, et dolore quis ipsum suspend.</p>
+                        <img src="/storage/images/service-03.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -172,21 +180,23 @@
                     </div>
                     <form id="subscribe" action="" method="get">
                         <div class="row">
-                          <div class="col-lg-5">
-                            <fieldset>
-                              <input name="name" type="text" id="name" placeholder="Your Name" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-5">
-                            <fieldset>
-                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-2">
-                            <fieldset>
-                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
-                            </fieldset>
-                          </div>
+                            <div class="col-lg-5">
+                                <fieldset>
+                                    <input name="name" type="text" id="name" placeholder="Your Name" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-5">
+                                <fieldset>
+                                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*"
+                                        placeholder="Your Email Address" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-2">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="main-dark-button"><i
+                                            class="fa fa-paper-plane"></i></button>
+                                </fieldset>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -203,7 +213,8 @@
                             <ul>
                                 <li>Work Hours:<br><span>07:30 AM - 9:30 PM Daily</span></li>
                                 <li>Email:<br><span>info@company.com</span></li>
-                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
+                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a
+                                            href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
                             </ul>
                         </div>
                     </div>

@@ -11,6 +11,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OptionController;
+use App\Http\Controllers\PieceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
 use App\Http\Middleware\LogUserIp;
@@ -35,7 +36,7 @@ Route::controller(HomeController::class)->group(function () {
 Route::controller(ProductController::class)->group(function () {
     Route::get('/products_page', 'products_page')->name('products_page');
     Route::get('/single_product/{product_id}', 'single_product')->name('single_product');
-    Route::get('/create_product_page', 'create_product_page')->name('create_product_page');
+    Route::get('/admin_products_page', 'admin_products_page')->name('admin_products_page');
 });
 Route::controller(CategoryController::class)->group(function () {
     Route::get('/category_product/{category_id}', 'category_product')->name('category_product');
@@ -86,6 +87,13 @@ Route::controller(AuthController::class)->group(function () {
 Route::controller(AdminController::class)->group(function () {
     Route::get('/clients_table', 'clients_table')->name('clients_table');
     Route::get('/client_products/{user_id}', 'client_products')->name('client_products');
+    Route::get('/create_product_page', 'create_product_page')->name('create_product_page');
+    Route::post('/create_product', 'create_product')->name('create_product');
+});
+
+Route::controller(PieceController::class)->group(function () {
+    Route::get('/create_pieces_page', 'create_pieces_page')->name('create_pieces_page');
+    Route::post('/create_pieces', 'create_pieces')->name('create_pieces');
 });
 
 Route::controller(OptionController::class)->group(function () {

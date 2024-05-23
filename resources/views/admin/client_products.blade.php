@@ -6,7 +6,9 @@
                     <div class="col-12 col-md-6 col-lg-12">
                         <div class="card">
                             <div class="card-header">
-
+                                <a href="{{Route('clients_table')}}" class="btn btn-warning"><i
+                                        class="fas fa-arrow-left"></i>
+                                </a>
                             </div>
                             <div class="card-body">
                                 <div class="section-title mt-0" style="text-align:start">
@@ -20,7 +22,6 @@
                                             <th scope="col">Product</th>
                                             <th scope="col">Size</th>
                                             <th scope="col">Color</th>
-                                            <th scope="col">Image</th>
                                             <th scope="col">Pcs</th>
                                             <th scope="col">Date</th>
                                         </tr>
@@ -33,7 +34,6 @@
                                                 <td>{{$product->product_name}}</td>
                                                 <td>{{$product->size}}</td>
                                                 <td>{{$product->color}}</td>
-                                                <td>{{$product->image}}</td>
                                                 <td>{{$product->pcs}}</td>
                                                 <td>{{$product->date}}</td>
                                             </tr>

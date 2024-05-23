@@ -38,8 +38,30 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="left-images">
-                            <img src="/assets1/images/{{$product->image_1}}" alt="{{$product->image_1}}">
-                            <img src="/assets1/images/{{$product->image_2}}" alt="{{$product->image_1}}">
+                            <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/storage/images/{{$product->image_1}}" class="d-block w-100"
+                                            height="600px" width="250px" "
+                                                                    alt=" {{$product->image_1}}">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/storage/images/{{$product->image_2}}" class="d-block w-100" height="
+                                                                600px" width="250px" "
+                                                                    alt=" {{$product->image_1}}">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4">

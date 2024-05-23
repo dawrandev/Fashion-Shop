@@ -18,22 +18,18 @@
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Client</th>
-                      <th scope="col">Category</th>
-                      <th scope="col">Product</th>
-                      <th scope="col">Summa</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Address</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($histories as $history)
+                    @foreach ($clients as $client)
             <tr>
             <th scope="row">{{$i++}}</th>
-            <td><a href="{{Route('user_products', $history->user_id)}}">
-              {{$history->surname}} {{$history->name}}
-              </a></td>
-            <td>{{$history->category_name}}</td>
-            <td>{{$history->product_name}}</td>
-            <td>{{$history->summa}}</td>
-            </tr>
+            <td class="max-texts"><a href="{{Route('client_products', $client->user_id)}}">
+              {{$client->surname}} {{$client->name}}</td>
+            <td>{{$client->phone}}</td>
+            <td>{{$client->address}}</td>
           @endforeach
                   </tbody>
                 </table>

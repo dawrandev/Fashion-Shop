@@ -37,8 +37,8 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"><img alt="image" src="assets2/img/logo.png" class="header-logo" /> <span
-                class="logo-name">Otika</span>
+            <a href="{{Route('clients_table')}}"><img alt="image" src="assets2/img/logo.png" class="header-logo" />
+              <span class="logo-name">Otika</span>
             </a>
           </div>
           <ul class="sidebar-menu">
@@ -49,7 +49,10 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{Route('create_option_page')}}">Create Options</a></li>
                 <li><a class="nav-link" href="{{Route('create_product_page')}}">Create Products</a></li>
+                <li><a class="nav-link" href="{{Route('create_pieces_page')}}">Create Pieces</a></li>
               </ul>
+              <a href="{{Route('admin_products_page')}}" class="nav-link"><i
+                  data-feather="grid"></i><span>Products</span></a>
             </li>
             </li>
           </ul>
