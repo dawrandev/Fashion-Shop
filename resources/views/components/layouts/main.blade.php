@@ -68,7 +68,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="{{Route('home_page')}}" class="logo">
-                            <img src="storage/images/logo.png">
+                            <img src="/storage/images/logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
 
@@ -80,7 +80,7 @@
                                     <div class="col-lg-3">
                                         <div class="first-item">
                                             <div class="logo">
-                                                <img src="storage/images/white-logo.png"
+                                                <img src="/storage/images/white-logo.png"
                                                     alt="hexashop ecommerce templatemo">
                                             </div>
                                             <ul>

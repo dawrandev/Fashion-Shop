@@ -16,7 +16,8 @@ class SelectInput extends Component
     public $selectedCategory;
     public $category_products;
     public $selectedProduct;
-    public $product_options;
+    public $sizes;
+    public $colors;
     public function mount()
     {
         $this->categories = Category::all();
@@ -30,15 +31,18 @@ class SelectInput extends Component
         $this->category_products = Product::where('category_id', $this->selectedCategory)
             ->get();
     }
+
     public function ProductOptions()
     {
-        $options = Option::where('product_id', $this->selectedProduct)
-            ->get();
-        $this->product_options = DB::table('options')
+        $this->sizes = DB::table('options')
             ->join('sizes', 'options.size_id', '=', 'sizes.id')
-            ->join('colors', 'options.color_id', '=', 'colors.id')
             ->where('product_id', $this->selectedProduct)
-            ->select('sizes.id as size_id', 'sizes.size', 'colors.id as color_id', 'colors.color')
+            ->select('sizes.id', 'sizes.size')
+            ->get();
+        $this->colors = DB::table('options')
+            ->join('colors', 'options.color_id', 'colors.id')
+            ->where('product_id', $this->selectedProduct)
+            ->select('colors.id', 'colors.color')
             ->get();
     }
     public function render()

@@ -32,58 +32,55 @@
 
     <!-- ***** Main Banner Area End ***** -->
     <!-- ***** Product Area Starts ***** -->
-    @foreach($single_product as $product)
-        <section class="section" id="product">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="left-images">
-                            <div id="carouselExampleFade" class="carousel slide carousel-fade">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="/storage/images/{{$product->image_1}}" class="d-block w-100"
-                                            height="600px" width="250px" "
-                                                                    alt=" {{$product->image_1}}">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="/storage/images/{{$product->image_2}}" class="d-block w-100" height="
-                                                                600px" width="250px" "
-                                                                    alt=" {{$product->image_1}}">
-                                    </div>
+    <section class="section" id="product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="left-images">
+                        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img style="object-fit:contain" src="/storage/images/{{$single_product->image_1}}"
+                                        class="d-block w-100" height="600px" width="250px"
+                                        alt="{{$single_product->image_1}}">
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                                    data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                                    data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+                                <div class="carousel-item">
+                                    <img src="/storage/images/{{$single_product->image_2}}" class="d-block w-100"
+                                        height="600px" width="250px" alt="{{$single_product->image_1}}">
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="right-content">
-                            <h4>{{$product->name}}</h4>
-                            <span class="price">{{$product->price}}</span>
-                            <ul class="stars">
-                                <h4>Pieces:{{$pcs}}</h4>
-                            </ul>
-                            <span>{{$product->text_1}}</span>
-                            <div class="quote">
-                                <i class="fa fa-quote-left"></i>
-                                <p>{{$product->text_2}}</p>
-                            </div>
-                            <hr>
-                            <livewire:counter :product_id="$product_id" />
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4">
+                    <div class="right-content">
+                        <h4>{{$single_product->name}}</h4>
+                        <span class="price">Pieces:{{$pcs}}</span>
+                        <ul class="stars">
+                            <h4>{{$single_product->price}}</h4>
+                        </ul>
+                        <span>{{$single_product->text_1}}</span>
+                        <div class="quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>{{$single_product->text_2}}</p>
+                        </div>
+                        <hr>
+                        <livewire:counter :product_id="$product_id" />
+                    </div>
+                </div>
             </div>
-        </section>
-    @endforeach
+        </div>
+    </section>
     <!-- ***** Product Area Ends ***** -->
 
 </x-layouts.main>

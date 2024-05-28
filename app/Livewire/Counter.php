@@ -25,12 +25,12 @@ class Counter extends Component
         $this->price = $this->product->price;
         $this->pcs = $piece->pcs;
         $this->options = DB::table('options')
-                        ->join('products', 'options.product_id', '=', 'products.id')
-                        ->join('sizes', 'options.size_id', '=', 'sizes.id')
-                        ->join('colors', 'options.color_id', '=', 'colors.id')
-                        ->where('products.id', $this->product_id)
-                        ->select('sizes.id as size_id', 'sizes.size', 'colors.id as color_id', 'colors.color')
-                        ->get();
+            ->leftjoin('products', 'options.product_id', '=', 'products.id')
+            ->leftJoin('sizes', 'options.size_id', '=', 'sizes.id')
+            ->leftjoin('colors', 'options.color_id', '=', 'colors.id')
+            ->where('products.id', $this->product_id)
+            ->select('sizes.id as size_id', 'sizes.size', 'colors.id as color_id', 'colors.color')
+            ->get();
         $this->size_id = $piece->size_id;
         $this->color_id = $piece->color_id;
     }
@@ -41,15 +41,17 @@ class Counter extends Component
     public function pcs()
     {
         $this->pcs = Piece::where('product_id', $this->product_id)
-                          ->where('size_id', $this->size_id)
-                          ->where('color_id', $this->color_id)
-                          ->first()->pcs - $this->count;
+            ->where('size_id', $this->size_id)
+            ->where('color_id', $this->color_id)
+            ->first()->pcs - $this->count;
     }
-    public function size($size_id){
+    public function size($size_id)
+    {
         $this->size_id = $size_id;
         $this->pcs();
     }
-    public function color($color_id){
+    public function color($color_id)
+    {
         $this->color_id = $color_id;
         $this->pcs();
     }

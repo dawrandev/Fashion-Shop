@@ -20,10 +20,10 @@
         <div class="form-group">
             <label class="form-label">Sizes</label>
             <div class="selectgroup selectgroup-pills">
-                @foreach ($product_options as $option)
+                @foreach ($sizes as $size)
                     <label class="selectgroup-item">
-                        <input type="radio" name="size_id" value="{{$option->size_id}}" class="selectgroup-input">
-                        <span class="selectgroup-button">{{$option->size}}</span>
+                        <input type="radio" name="size_id" value="{{$size->id}}" class="selectgroup-input">
+                        <span class="selectgroup-button">{{$size->size}}</span>
                     </label>
                 @endforeach
             </div>
@@ -34,11 +34,11 @@
         <div class="form-group">
             <label class="form-label">Color Input</label>
             <div class="selectgroup w-100">
-                @foreach($product_options as $option)
+                @foreach($colors as $color)
                     <label class="selectgroup-item">
-                        <div style="accent-color: {{$option->color}}">
-                            <input type="radio" name="color_id" value="{{$option->color_id}}">
-                            <span>{{$option->color}}</span>
+                        <div style="accent-color: {{$color->color}}">
+                            <input type="radio" name="color_id" value="{{$color->id}}">
+                            <span>{{$color->color}}</span>
                     </label>
                 @endforeach
             </div>
@@ -58,5 +58,4 @@
             <button class="btn btn-secondary" type="reset">Reset</button>
         </div>
     </form>
-
 </div>

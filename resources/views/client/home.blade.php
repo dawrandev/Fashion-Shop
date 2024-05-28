@@ -122,7 +122,6 @@
                                                                         <span>{{$option->size}}</span>
                                                                     </div>
                                                                 @endif 
-
                                                             @endforeach 
                                                             <br>
                                                             @foreach($options as $option)

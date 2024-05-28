@@ -96,12 +96,13 @@ class AdminController extends Controller
             'image_1' => $imagename_1,
             'image_2' => $imagename_2
         ]);
-        $colorcount = count($request->colors);
+        $colors = $request->colors;
         for ($i = 0; $i < count($request->sizes); $i++) {
+            $color = isset($colors[$i]) ? $colors[$i] : null;
             $option_create = Option::create([
                 'product_id' => $storeproduct->id,
                 'size_id' => $request->sizes[$i],
-                'color_id' => $request->colors[$i % $colorcount]
+                'color_id' => $color
             ]);
         }
         return redirect()->route('create_pieces_page');

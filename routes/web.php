@@ -37,6 +37,7 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/products_page', 'products_page')->name('products_page');
     Route::get('/single_product/{product_id}', 'single_product')->name('single_product');
     Route::get('/admin_products_page', 'admin_products_page')->name('admin_products_page');
+    Route::get('/single_product_admin/{product_id}', 'single_product_admin')->name('single_product_admin');
 });
 Route::controller(CategoryController::class)->group(function () {
     Route::get('/category_product/{category_id}', 'category_product')->name('category_product');

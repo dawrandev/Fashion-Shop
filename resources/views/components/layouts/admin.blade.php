@@ -37,7 +37,7 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="{{Route('clients_table')}}"><img alt="image" src="assets2/img/logo.png" class="header-logo" />
+            <a href="{{Route('clients_table')}}"><img alt="image" src="/assets2/img/logo.png" class="header-logo" />
               <span class="logo-name">Otika</span>
             </a>
           </div>
