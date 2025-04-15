@@ -9,7 +9,7 @@
             <a href="">Categories</a>
             <ul>
                 @foreach ($categories as $category)
-                    <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
+                <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
@@ -29,7 +29,7 @@
     </header>
     <!-- ***** Header Area End ***** -->
     <!-- ***** Main Banner Area Start ***** -->
-    
+
     <!-- ***** Main Banner Area End ***** -->
 
 
@@ -52,9 +52,9 @@
                     <div class="item">
                         <div class="thumb">
                             <a href="{{Route('single_product', $product->product_id)}}">
-                            <img src="storage/images/{{$product->image}}" alt="{{$product->image}}" width="300px"
-                                height="400px">
-                                </a>
+                                <img src="storage/images/{{$product->image}}" alt="{{$product->image}}" width="300px"
+                                    height="400px">
+                            </a>
                         </div>
                         <div class="down-content">
                             <h4>{{$product->product_name}}</h4>
@@ -65,14 +65,14 @@
                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                     <span>{{$option->size}}</span>
                                 </div>
-                                @endif                                  @endforeach
+                                @endif @endforeach
                                 <br>
                                 @foreach($options as $option)
                                 @if($product->product_id == $option->product_id)
                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                     <figure class="circle" style="background: {{$option->color}}"></figure>
                                 </div>
-                                @endif                                  @endforeach
+                                @endif @endforeach
                             </ul>
                         </div>
                     </div>
@@ -80,22 +80,22 @@
                 @endforeach
                 <div class="col-lg-12">
                     @if ($products->lastPage() > 1)
-                        <div class="pagination">
-                            <ul>
-                                <li class="{{ ($products->currentPage() == 1) ? ' disabled' : '' }}">
-                                    <a href="{{$products->url(1)}}">
-                                        < </a>
+                    <div class="pagination">
+                        <ul>
+                            <li class="{{ ($products->currentPage() == 1) ? ' disabled' : '' }}">
+                                <a href="{{$products->url(1)}}">
+                                    < </a>
+                            </li>
+                            @for ($i = 1; $i <= $products->lastPage(); $i++)
+                                <li class="{{ ($products->currentPage() == $i) ? ' active' : '' }}">
+                                    <a href="{{ $products->url($i) }}">{{$i}}</a>
                                 </li>
-                                @for ($i = 1; $i <= $products->lastPage(); $i++)
-                                    <li class="{{ ($products->currentPage() == $i) ? ' active' : '' }}">
-                                        <a href="{{ $products->url($i) }}">{{$i}}</a>
-                                    </li>
                                 @endfor
                                 <li class="{{ ($products->currentPage() == $products->lastPage()) ? ' disabled' : '' }}">
                                     <a href="{{ $products->url($products->currentPage() + 1) }}">></a>
                                 </li>
-                            </ul>
-                        </div>
+                        </ul>
+                    </div>
                     @endif
                 </div>
             </div>

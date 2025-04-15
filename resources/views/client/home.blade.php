@@ -9,7 +9,7 @@
             <a href="">Categories</a>
             <ul>
                 @foreach ($categories as $category)
-                    <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
+                <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
@@ -37,10 +37,6 @@
                     <div class="left-content">
                         <div class="thumb">
                             <div class="inner-content">
-                                <h4 style="border: solid white; border-radius:15px">Bizde 50% skidka</h4>
-                                <h5
-                                    style="background-image: linear-gradient(to right, #f22, #f2f, #22f, #2ff, #2f2, #ff2); color: transparent; -webkit-background-clip: text; background-clip: text;">
-                                    Skidkadagi tovarlardi koriw ushin</h5>
                                 <div class="main-border-button">
                                     <a href="#">Purchase Now!</a>
                                 </div>
@@ -53,27 +49,26 @@
                     <div class="right-content">
                         <div class="row">
                             @foreach ($categories as $category)
-                                <div class="col-lg-6">
-                                    <div class="right-first-image">
-                                        <div class="thumb">
-                                            <div class="inner-content">
-                                                <h4>{{$category->name}}</h4>
-                                                <span>Best Clothes For Women</span>
-                                            </div>
-                                            <div class="hover-content">
-                                                <div class="inner">
-                                                    <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
-                                                    </p>
-                                                    <div class="main-border-button">
-                                                        <a href="{{Route('category_product', $category->id)}}">Discover
-                                                            More</a>
-                                                    </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>{{$category->name}}</h4>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
+                                                </p>
+                                                <div class="main-border-button">
+                                                    <a href="{{Route('category_product', $category->id)}}">Discover
+                                                        More</a>
                                                 </div>
                                             </div>
-                                            <img src="storage/images/{{$category->image_baner}}">
                                         </div>
+                                        <img style="height:300px; width: 340px; " src="storage/images/{{$category->image_banner}}" alt="{{$category->image_banner}}">
                                     </div>
                                 </div>
+                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -83,67 +78,67 @@
 
             <!-- ***** Men Area Starts ***** -->
             @foreach($categories as $category)
-                <section class="section" id="men">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="section-heading">
-                                    <h2><a style="color:black"
-                                            href="{{Route('category_product', $category->id)}}">{{$category->name}}</a>
-                                    </h2>
-                                    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span>
-                                </div>
+            <section class="section" id="men">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="section-heading">
+                                <h2><a style="color:black"
+                                        href="{{Route('category_product', $category->id)}}">{{$category->name}}</a>
+                                </h2>
+                                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span>
                             </div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="men-item-carousel">
-                                    <div class="owl-men-item owl-carousel">
-                                        @foreach($category_products as $category_product)
-                                            @if($category_product->category_id == $category->id)
-                                                <div class="item">
-                                                    <div class="thumb">
-                                                        <div class="hover-content">
-                                                        </div>
-                                                        <a href="{{Route('single_product', [$category_product->product_id])}}"><img
-                                                                src="storage/images/{{$category_product->image}}"
-                                                                alt="{{$category_product->image}}" width="300px" height="400px"></a>
-                                                    </div>
-                                                    <div class="down-content">
-                                                        <h4>{{$category_product->product_name}}</h4>
-                                                        <span>{{$category_product->price}}</span>
-                                                        <ul class="stars">
-                                                            @foreach($options as $option)
-                                                                @if($category_product->product_id == $option->product_id)
-                                                                    <div class="btn-group" role="group"
-                                                                        aria-label="Basic radio toggle button group">
-                                                                        <span>{{$option->size}}</span>
-                                                                    </div>
-                                                                @endif 
-                                                            @endforeach 
-                                                            <br>
-                                                            @foreach($options as $option)
-                                                                @if($category_product->product_id == $option->product_id)
-                                                                    <div class="btn-group" role="group"
-                                                                        aria-label="Basic radio toggle button group">
-                                                                        <figure class="circle" style="background: {{$option->color}};">
-                                                                        </figure>
-                                                                    </div>
-                                                                @endif
-                                                            @endforeach
-                                                        </ul>
-                                                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="men-item-carousel">
+                                <div class="owl-men-item owl-carousel">
+                                    @foreach($category_products as $category_product)
+                                    @if($category_product->category_id == $category->id)
+                                    <div class="item">
+                                        <div class="thumb">
+                                            <div class="hover-content">
+                                            </div>
+                                            <a href="{{Route('single_product', [$category_product->product_id])}}"><img
+                                                    src="storage/images/{{$category_product->image}}"
+                                                    alt="{{$category_product->image}}" width="300px" height="400px"></a>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>{{$category_product->product_name}}</h4>
+                                            <span>{{$category_product->price}}</span>
+                                            <ul class="stars">
+                                                @foreach($options as $option)
+                                                @if($category_product->product_id == $option->product_id)
+                                                <div class="btn-group" role="group"
+                                                    aria-label="Basic radio toggle button group">
+                                                    <span>{{$option->size}}</span>
                                                 </div>
-                                            @endif
-                                        @endforeach
+                                                @endif
+                                                @endforeach
+                                                <br>
+                                                @foreach($options as $option)
+                                                @if($category_product->product_id == $option->product_id)
+                                                <div class="btn-group" role="group"
+                                                    aria-label="Basic radio toggle button group">
+                                                    <figure class="circle" style="background: {{$option->color}};">
+                                                    </figure>
+                                                </div>
+                                                @endif
+                                                @endforeach
+                                            </ul>
+                                        </div>
                                     </div>
+                                    @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
-            @endforeach
+                </div>
+                @endforeach
             </section>
             <!-- ***** Men Area Ends ***** -->
 

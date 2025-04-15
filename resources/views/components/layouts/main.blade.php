@@ -68,7 +68,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="{{Route('home_page')}}" class="logo">
-                            <img src="/storage/images/logo.png">
+                            <img src="/storage/images/logo.jpg" style="height: 80px; width: 170px;">
                         </a>
                         <!-- ***** Logo End ***** -->
 
@@ -159,13 +159,13 @@
                         <!-- Global Init -->
                         <script src="{{URL::asset('assets1/js/custom.js')}}"></script>
                         <script>
-                            $(function () {
+                            $(function() {
                                 var selectedClass = "";
-                                $("p").click(function () {
+                                $("p").click(function() {
                                     selectedClass = $(this).attr("data-rel");
                                     $("#portfolio").fadeTo(50, 0.1);
                                     $("#portfolio div").not("." + selectedClass).fadeOut();
-                                    setTimeout(function () {
+                                    setTimeout(function() {
                                         $("." + selectedClass).fadeIn();
                                         $("#portfolio").fadeTo(50, 1);
                                     }, 500);

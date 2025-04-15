@@ -15,8 +15,8 @@
                     <label>Select Category</label>
                     <select class="form-control" name="category_id">
                       @foreach ($categories as $category)
-            <option value="{{$category->id}}">{{$category->name}}</option>
-          @endforeach
+                      <option value="{{$category->id}}">{{$category->name}}</option>
+                      @endforeach
                     </select>
                   </div>
                   <div class="form-group">
@@ -34,11 +34,11 @@
                     <label class="form-label">Sizes</label>
                     <div class="selectgroup selectgroup-pills">
                       @foreach ($sizes as $size)
-            <label class="selectgroup-item">
-              <input type="checkbox" name="sizes[]" value="{{$size->id}}" class="selectgroup-input">
-              <span class="selectgroup-button">{{$size->size}}</span>
-            </label>
-          @endforeach
+                      <label class="selectgroup-item">
+                        <input type="checkbox" name="sizes[]" value="{{$size->id}}" class="selectgroup-input">
+                        <span class="selectgroup-button">{{$size->size}}</span>
+                      </label>
+                      @endforeach
                     </div>
                   </div>
                   @error('sizes')
@@ -48,13 +48,13 @@
                     <label class="form-label">Color Input</label>
                     <div class="selectgroup w-100">
                       @foreach($colors as $color)
-            <label class="selectgroup-item">
-              <div style="accent-color: {{$color->color}}">
-              <input type="checkbox" name="colors[]" value="{{$color->id}}">
-              <span>{{$color->color}}</span>
-            </label>
-          @endforeach
-          
+                      <label class="selectgroup-item">
+                        <div style="accent-color: {{$color->color}}">
+                          <input type="checkbox" name="colors[]" value="{{$color->id}}">
+                          <span>{{$color->color}}</span>
+                      </label>
+                      @endforeach
+
                     </div>
                   </div>
                   @error('colors')
@@ -65,36 +65,36 @@
                   <label>Text 1</label>
                   <textarea class="form-control" name="text_1" value="{{old('text_1')}}"></textarea>
                   @error('text_1')
-          <li style="color:red">{{$message}}</li>
-        @enderror
+                  <li style="color:red">{{$message}}</li>
+                  @enderror
                 </div>
                 <div class="form-group">
                   <label>Text 2</label>
                   <textarea class="form-control" name="text_2" value="{{old('text_2')}}"></textarea>
                   @error('text_2')
-          <li style="color:red">{{$message}}</li>
-        @enderror
+                  <li style="color:red">{{$message}}</li>
+                  @enderror
                 </div>
                 <div class="form-group">
                   <label>Image</label>
                   <input type="file" class="form-control" name="image" value="{{old('image')}}">
                   @error('image')
-          <li style="color:red">{{$message}}</li>
-        @enderror
+                  <li style="color:red">{{$message}}</li>
+                  @enderror
                 </div>
                 <div class="form-group">
                   <label>Image 1</label>
                   <input type="file" class="form-control" name="image_1" value="{{old('image_1')}}">
                   @error('image_1')
-          <li style="color:red">{{$message}}</li>
-        @enderror
+                  <li style="color:red">{{$message}}</li>
+                  @enderror
                 </div>
                 <div class="form-group">
                   <label>Image 2</label>
                   <input type="file" class="form-control" name="image_2" value="{{old('image_2')}}">
                   @error('image_2')
-          <li style="color:red">{{$message}}</li>
-        @enderror
+                  <li style="color:red">{{$message}}</li>
+                  @enderror
                 </div>
                 <div class="card-footer text-right">
                   <button class="btn btn-primary mr-1" type="submit">Submit</button>

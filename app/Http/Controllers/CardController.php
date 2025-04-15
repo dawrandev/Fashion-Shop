@@ -46,7 +46,7 @@ class CardController extends Controller
 
                 Basket::truncate();
             }
-            return view('client.card');
+            return view('client.card', compact('summa'));
         } else {
             return redirect()->route('registration_page');
         }

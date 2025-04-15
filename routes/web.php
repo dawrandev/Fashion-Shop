@@ -14,6 +14,7 @@ use App\Http\Controllers\OptionController;
 use App\Http\Controllers\PieceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
+use App\Http\Controllers\TelegramController;
 use App\Http\Middleware\LogUserIp;
 use App\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
@@ -108,4 +109,5 @@ Route::middleware([LogUserIp::class])->group(function () {
     return view('client.home');
 });
 
-
+Route::post('/telegram/webhook', [TelegramController::class, 'webhook']);
+Route::get('/telegram/set-webhook', [TelegramController::class, 'setWebhook']);

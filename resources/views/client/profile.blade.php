@@ -6,7 +6,7 @@
             <a href="">Categories</a>
             <ul>
                 @foreach ($categories as $category)
-                    <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
+                <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
@@ -46,29 +46,37 @@
                             <form action="{{Route('update_client')}}" method="post">
                                 @csrf
                                 @foreach($client_documents as $client)
-                                    <p>Surname</p>
-                                    <input type="text" class="form-control" name="surname" value="{{$client->surname}}"><br>
-                                    @error('surname')
+                                <p>Surname</p>
+                                <input type="text" class="form-control" name="surname" value="{{$client->surname}}"><br>
+                                @error('surname')
+                                <li style="color:red">{{$message}}</li>
+                                @enderror
+                                <p>Name</p>
+                                <input type="text" class="form-control" name="name" value="{{$client->name}}"><br>
+                                @error('name')
+                                <li style="color:red">{{$message}}</li>
+                                @enderror
+                                <p>Phone</p>
+                                <input type="number" class="form-control" name="phone" value="{{$client->phone}}"><br>
+                                @error('phone')
+                                <li style="color:red">{{$message}}</li>
+                                @enderror
+                                <p>Address</p>
+
+                                <div class="row">
+                                    <div class="col-11">
+                                        <input type="text" class="form-control" name="address" value="{{$client->address}}"><br>
+                                        @error('address')
                                         <li style="color:red">{{$message}}</li>
-                                    @enderror
-                                    <p>Name</p>
-                                    <input type="text" class="form-control" name="name" value="{{$client->name}}"><br>
-                                    @error('name')
-                                        <li style="color:red">{{$message}}</li>
-                                    @enderror
-                                    <p>Phone</p>
-                                    <input type="number" class="form-control" name="phone" value="{{$client->phone}}"><br>
-                                    @error('phone')
-                                        <li style="color:red">{{$message}}</li>
-                                    @enderror
-                                    <p>Address</p>
-                                    <input type="text" class="form-control" name="address" value="{{$client->address}}"><br>
-                                    @error('address')
-                                        <li style="color:red">{{$message}}</li>
-                                    @enderror
-                                    <div style="text-align:end">
-                                        <input type="submit" class="btn btn-outline-dark" value="Save">
+                                        @enderror
                                     </div>
+                                    <div class="col-1">
+                                        <input type="submit" class="btn btn-outline-dark" value="Map">
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <input type="submit" class="btn btn-outline-dark" value="Save">
+                                </div>
                                 @endforeach
                             </form>
                         </div>
