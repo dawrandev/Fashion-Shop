@@ -68,7 +68,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="{{Route('home_page')}}" class="logo">
-                            <img src="/storage/images/logo.jpg" style="height: 80px; width: 170px;">
+                            <img src="/storage/images/FashionShop_logo_white_bg.png" style="height: 80px; width: 170px;">
                         </a>
                         <!-- ***** Logo End ***** -->
 
