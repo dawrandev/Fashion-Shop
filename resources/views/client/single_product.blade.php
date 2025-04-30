@@ -9,7 +9,7 @@
             <a href="">Categories</a>
             <ul>
                 @foreach ($categories as $category)
-                    <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
+                <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
@@ -40,12 +40,12 @@
                         <div id="carouselExampleFade" class="carousel slide carousel-fade">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img style="object-fit:contain" src="/storage/images/{{$single_product->image_1}}"
+                                    <img style="object-fit:contain" src="{{ asset('images/' . $single_product->image_1) }}"
                                         class="d-block w-100" height="600px" width="250px"
                                         alt="{{$single_product->image_1}}">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="/storage/images/{{$single_product->image_2}}" class="d-block w-100"
+                                    <img src="{{ asset('images/' . $single_product->image_2) }}" class="d-block w-100"
                                         height="600px" width="250px" alt="{{$single_product->image_1}}">
                                 </div>
                             </div>

@@ -62,7 +62,7 @@
                                         <th scope="row">{{$i++}}</th>
                                         <td class="img">
                                             <a href="{{Route('single_product', $history->product_id)}}">
-                                                <img src="/images/{{$history->image}}" class="rounded"
+                                                <img src="{{ asset('images/' . $history->image) }}" class="rounded"
                                                     alt="{{$history->image}}">
                                             </a>
                                         </td>

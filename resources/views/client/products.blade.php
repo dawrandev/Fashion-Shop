@@ -52,7 +52,7 @@
                     <div class="item">
                         <div class="thumb">
                             <a href="{{Route('single_product', $product->product_id)}}">
-                                <img src="images/{{$product->image}}" alt="{{$product->image}}" width="300px"
+                                <img src="{{ asset('images/' . $product->image) }}" alt="{{$product->image}}" width="300px"
                                     height="400px">
                             </a>
                         </div>
