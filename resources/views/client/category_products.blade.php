@@ -9,7 +9,7 @@
             <a href="">Categories</a>
             <ul>
                 @foreach ($categories as $category)
-                    <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
+                <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
@@ -44,52 +44,52 @@
         <div class="container">
             <div class="row">
                 @foreach($products as $product)
-                    <div class="col-lg-4">
-                        <div class="item">
-                            <div class="thumb">
-                                <div class="hover-content">
-                                    <ul>
-                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <img src="/storage/images/{{$product->image}}" alt="{{$product->image}}" width="300px"
-                                    height="400px">
-                            </div>
-                            <div class="down-content">
-                                <h4>{{$product->product_name}}</h4>
-                                <span>{{$product->price}}</span>
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
+                <div class="col-lg-4">
+                    <div class="item">
+                        <div class="thumb">
+                            <div class="hover-content">
+                                <ul>
+                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
+                            <img src="/images/{{$product->image}}" alt="{{$product->image}}" width="300px"
+                                height="400px">
+                        </div>
+                        <div class="down-content">
+                            <h4>{{$product->product_name}}</h4>
+                            <span>{{$product->price}}</span>
+                            <ul class="stars">
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul>
                         </div>
                     </div>
+                </div>
                 @endforeach
                 <div class="col-lg-12">
                     @if ($products->lastPage() > 1)
-                        <div class="pagination">
-                            <ul>
-                                <li class="{{ ($products->currentPage() == 1) ? ' disabled' : '' }}">
-                                    <a href="{{$products->url(1)}}">
-                                        < </a>
+                    <div class="pagination">
+                        <ul>
+                            <li class="{{ ($products->currentPage() == 1) ? ' disabled' : '' }}">
+                                <a href="{{$products->url(1)}}">
+                                    < </a>
 
+                            </li>
+                            @for ($i = 1; $i <= $products->lastPage(); $i++)
+                                <li class="{{ ($products->currentPage() == $i) ? ' active' : '' }}">
+                                    <a href="{{ $products->url($i) }}">{{$i}}</a>
                                 </li>
-                                @for ($i = 1; $i <= $products->lastPage(); $i++)
-                                    <li class="{{ ($products->currentPage() == $i) ? ' active' : '' }}">
-                                        <a href="{{ $products->url($i) }}">{{$i}}</a>
-                                    </li>
                                 @endfor
                                 <li class="{{ ($products->currentPage() == $products->lastPage()) ? ' disabled' : '' }}">
                                     <a href="{{ $products->url($products->currentPage() + 1) }}">></a>
                                 </li>
-                            </ul>
-                        </div>
+                        </ul>
+                    </div>
                     @endif
                 </div>
             </div>

@@ -41,7 +41,7 @@
                                     <a href="#">Purchase Now!</a>
                                 </div>
                             </div>
-                            <img style="" src="storage/images/baner.jpg" alt="" height="630px">
+                            <img style="" src="/images/baner.jpg" alt="" height="630px">
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <img style="height:300px; width: 340px; " src="storage/images/{{$category->image_banner}}" alt="{{$category->image_banner}}">
+                                        <img style="height:300px; width: 340px; " src="/images/{{$category->image_banner}}" alt="{{$category->image_banner}}">
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                             <div class="hover-content">
                                             </div>
                                             <a href="{{Route('single_product', [$category_product->product_id])}}"><img
-                                                    src="storage/images/{{$category_product->image}}"
+                                                    src="/images/{{$category_product->image}}"
                                                     alt="{{$category_product->image}}" width="300px" height="400px"></a>
                                         </div>
                                         <div class="down-content">
@@ -184,12 +184,12 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="first-image">
-                                            <img src="storage/images/explore-image-01.jpg" alt="">
+                                            <img src="/images/explore-image-01.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="second-image">
-                                            <img src="storage/images/explore-image-02.jpg" alt="">
+                                            <img src="/images/explore-image-02.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">

@@ -8,7 +8,7 @@
             <a href="">Categories</a>
             <ul>
                 @foreach ($categories as $category)
-                    <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
+                <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
@@ -55,23 +55,23 @@
                     </thead>
                     <tbody>
                         @foreach($basket_products as $product)
-                            <tr style="margin:auto; text-align:center">
-                                <th scope="row">{{$i++}}</th>
-                                <td class="img">
-                                    <a href="{{Route('single_product', $product->product_id)}}">
-                                        <img src="/storage/images/{{$product->image}}" class="rounded"
-                                            alt="{{$product->image}}">
-                                    </a>
-                                </td>
-                                <td>{{$product->category_name}}</td>
-                                <td>{{$product->product_name}}</td>
-                                <td>{{$product->size}}</td>
-                                <td>{{$product->color}}</td>
-                                <td>{{$product->price}}</td>
-                                <td>{{$product->pcs}}</td>
-                                <td><a href="{{Route('delete_basket', [$product->id])}}" class="btn btn-dark">Delete</a>
-                                </td>
-                            </tr>
+                        <tr style="margin:auto; text-align:center">
+                            <th scope="row">{{$i++}}</th>
+                            <td class="img">
+                                <a href="{{Route('single_product', $product->product_id)}}">
+                                    <img src="/images/{{$product->image}}" class="rounded"
+                                        alt="{{$product->image}}">
+                                </a>
+                            </td>
+                            <td>{{$product->category_name}}</td>
+                            <td>{{$product->product_name}}</td>
+                            <td>{{$product->size}}</td>
+                            <td>{{$product->color}}</td>
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->pcs}}</td>
+                            <td><a href="{{Route('delete_basket', [$product->id])}}" class="btn btn-dark">Delete</a>
+                            </td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>

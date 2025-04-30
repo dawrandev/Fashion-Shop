@@ -6,7 +6,7 @@
             <a href="">Categories</a>
             <ul>
                 @foreach ($categories as $category)
-                    <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
+                <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
@@ -58,22 +58,22 @@
                                 </thead>
                                 <tbody>
                                     @foreach($histories as $history)
-                                        <tr style="margin:auto; text-align:center">
-                                            <th scope="row">{{$i++}}</th>
-                                            <td class="img">
-                                                <a href="{{Route('single_product', $history->product_id)}}">
-                                                    <img src="/storage/images/{{$history->image}}" class="rounded"
-                                                        alt="{{$history->image}}">
-                                                </a>
-                                            </td>
-                                            <td>{{$history->category_name}}</td>
-                                            <td>{{$history->product_name}}</td>
-                                            <td>{{$history->size}}</td>
-                                            <td>{{$history->color}}</td>
-                                            <td>{{$history->price}}</td>
-                                            <td>{{$history->pcs}}</td>
-                                            <td>{{$history->date}}</td>
-                                        </tr>
+                                    <tr style="margin:auto; text-align:center">
+                                        <th scope="row">{{$i++}}</th>
+                                        <td class="img">
+                                            <a href="{{Route('single_product', $history->product_id)}}">
+                                                <img src="/images/{{$history->image}}" class="rounded"
+                                                    alt="{{$history->image}}">
+                                            </a>
+                                        </td>
+                                        <td>{{$history->category_name}}</td>
+                                        <td>{{$history->product_name}}</td>
+                                        <td>{{$history->size}}</td>
+                                        <td>{{$history->color}}</td>
+                                        <td>{{$history->price}}</td>
+                                        <td>{{$history->pcs}}</td>
+                                        <td>{{$history->date}}</td>
+                                    </tr>
                                     @endforeach
                                 </tbody>
                             </table>
