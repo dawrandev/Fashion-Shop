@@ -63,5 +63,4 @@ class ClientController extends Controller
             ]);
         return redirect()->route('profile');
     }
-
 }

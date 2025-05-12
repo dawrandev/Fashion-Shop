@@ -44,15 +44,23 @@
           <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown">
-              <a href="{{Route('clients_table')}}" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="monitor"></i><span>Create</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{Route('create_option_page')}}">Create Options</a></li>
-                <li><a class="nav-link" href="{{Route('create_product_page')}}">Create Products</a></li>
-                <li><a class="nav-link" href="{{Route('create_pieces_page')}}">Create Pieces</a></li>
-              </ul>
+              <a href="#" class="nav-link"><i
+                  data-feather="monitor"></i><span>Tiykarǵı panel</span>
+              </a>
+              <a href="{{Route('clients_table')}}" class="nav-link"><i
+                  data-feather="user-check"></i><span>Klientler</span>
+              </a>
               <a href="{{Route('admin_products_page')}}" class="nav-link"><i
-                  data-feather="grid"></i><span>Products</span></a>
+                  data-feather="grid"></i><span>Ónimler</span></a>
+              <a href="{{Route('create_option_page')}}" class="nav-link"><i
+                  data-feather="sliders"></i><span>Parametrler</span>
+              </a>
+              <a href="{{Route('create_product_page')}}" class="nav-link"><i
+                  data-feather="shopping-bag"></i><span>Ónim jaratıw</span>
+              </a>
+              <a href="{{Route('create_pieces_page')}}" class="nav-link"><i
+                  data-feather="command"></i><span>Sanın kiritiw</span>
+              </a>
             </li>
             </li>
           </ul>

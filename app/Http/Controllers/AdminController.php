@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Size;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
@@ -61,32 +62,31 @@ class AdminController extends Controller
         $colors = Color::all();
         return view('admin.create_product', compact('categories', 'sizes', 'colors'));
     }
+
     public function create_product(Request $request)
     {
-        $validate = $request->validate([
+        $request->validate([
             'product_name' => 'required',
-            'price' => 'required',
+            'price' => 'required|numeric',
             'sizes' => 'required|array',
             'colors' => 'required|array',
             'text_1' => 'required',
             'text_2' => 'required',
-            'image' => 'image|required',
-            'image_1' => 'image|required',
-            'image_2' => 'image|required'
+            'image' => 'required|image',
+            'image_1' => 'required|image',
+            'image_2' => 'required|image',
+            'category_id' => 'required|exists:categories,id',
         ]);
-        if ($request->hasFile('image') && $request->hasFile('image_1') && $request->hasFile('image_2')) {
-            $imagename = $request->file('image')->getClientOriginalName();
-            $imagename_1 = $request->file('image_1')->getClientOriginalName();
-            $imagename_2 = $request->file('image_2')->getClientOriginalName();
 
-            $path = $request->file('image')->storeAs('public/images/', $imagename);
-            $path_1 = $request->file('image_1')->storeAs('public/images/', $imagename_1);
-            $path_2 = $request->file('image_2')->storeAs('public/images/', $imagename_2);
-        } else {
-            return response()->json(['error' => 'Images not found in request'], 400);
-        }
+        $imagename = $request->file('image')->getClientOriginalName();
+        $imagename_1 = $request->file('image_1')->getClientOriginalName();
+        $imagename_2 = $request->file('image_2')->getClientOriginalName();
 
-        $storeproduct = Product::create([
+        $request->file('image')->storeAs('public/images/', $imagename);
+        $request->file('image_1')->storeAs('public/images/', $imagename_1);
+        $request->file('image_2')->storeAs('public/images/', $imagename_2);
+
+        $product = Product::create([
             'category_id' => $request->category_id,
             'name' => $request->product_name,
             'price' => $request->price,
@@ -96,16 +96,38 @@ class AdminController extends Controller
             'image_1' => $imagename_1,
             'image_2' => $imagename_2
         ]);
+
+        $sizes = $request->sizes;
         $colors = $request->colors;
-        for ($i = 0; $i < count($request->sizes); $i++) {
-            $color = isset($colors[$i]) ? $colors[$i] : null;
-            $option_create = Option::create([
-                'product_id' => $storeproduct->id,
-                'size_id' => $request->sizes[$i],
-                'color_id' => $color
+
+        foreach ($sizes as $index => $sizeId) {
+            Option::create([
+                'product_id' => $product->id,
+                'size_id' => $sizeId,
+                'color_id' => $colors[$index] ?? null
             ]);
         }
-        return redirect()->route('create_pieces_page');
+
+        $product = Product::with(['category', 'colors', 'sizes'])->find($product->id);
+
+        $caption = "<b>✨ Jańa ónim qosıldı!</b>\n\n";
+        $caption .= "📦 <b>Kategoriya:</b> " . ($product->category->name ?? "Noma'lum") . "\n";
+        $caption .= "🏷 <b>Atı:</b> {$product->name}\n";
+        $caption .= "💵 <b>Baxası:</b> {$product->price} so'm\n\n";
+
+        $caption .= "<b>Tolıq maǵlıwmat: <a href='http://127.0.0.1:8000/single_product/{$product->id}'>link</a></b>";
+
+
+        $mainImagePath = storage_path('app/public/images/' . $product->image);
+        sendTelegramMessage($caption, $mainImagePath);
+
+        return redirect()->route('create_pieces_page')->with('success', 'Mahsulot muvaffaqiyatli qo‘shildi va Telegramga yuborildi!');
     }
 
+
+    public function delete_product($id)
+    {
+        Product::where('id', $id)->delete();
+        return redirect()->route('admin_products_page');
+    }
 }

@@ -18,25 +18,25 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Category</th>
+                                            <th scope="col">Kategoriya</th>
                                             <th scope="col">Product</th>
-                                            <th scope="col">Size</th>
-                                            <th scope="col">Color</th>
-                                            <th scope="col">Pcs</th>
-                                            <th scope="col">Date</th>
+                                            <th scope="col">Ólshem</th>
+                                            <th scope="col">Reń</th>
+                                            <th scope="col">Sanı</th>
+                                            <th scope="col">Sáne</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($client_products as $product)
-                                            <tr>
-                                                <th scope="row">{{$i++}}</th>
-                                                <td>{{$product->category_name}}</td>
-                                                <td>{{$product->product_name}}</td>
-                                                <td>{{$product->size}}</td>
-                                                <td>{{$product->color}}</td>
-                                                <td>{{$product->pcs}}</td>
-                                                <td>{{$product->date}}</td>
-                                            </tr>
+                                        <tr>
+                                            <th scope="row">{{$i++}}</th>
+                                            <td>{{$product->category_name}}</td>
+                                            <td>{{$product->product_name}}</td>
+                                            <td>{{$product->size}}</td>
+                                            <td>{{$product->color}}</td>
+                                            <td>{{$product->pcs}}</td>
+                                            <td>{{$product->date}}</td>
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                     {{$client_products->links()}}

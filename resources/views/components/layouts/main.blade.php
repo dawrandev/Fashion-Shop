@@ -68,7 +68,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="{{Route('home_page')}}" class="logo">
-                            <img src="{{asset('images/Flux_Dev_A_modern_and_sophisticated_logo_design_for_a_highend__2.png') }}" style="height: 80px; width: 170px;">
+                            <img src="{{asset('storage/images/Flux_Dev_Minimalistic_logo_for_an_online_clothing_store_named__0 (1).svg') }}" style="height: 90px; width: 190px;">
                         </a>
                         <!-- ***** Logo End ***** -->
 
@@ -80,35 +80,33 @@
                                     <div class="col-lg-3">
                                         <div class="first-item">
                                             <div class="logo">
-                                                <img src="{{asset('images/Flux_Dev_A_modern_and_sophisticated_logo_design_for_a_highend__2.jpg') }}"
-                                                    alt="hexashop ecommerce templatemo">
+                                                <img src="{{asset('storage/images/Flux_Dev_Minimalistic_logo_for_an_online_clothing_store_named__0 (1).svg') }}" style="height: 90px; width: 190px;
+                                                    alt=" hexashop ecommerce templatemo">
                                             </div>
                                             <ul>
-                                                <li><a href="https://maps.app.goo.gl/7ShSsxdZYqAAw4Wc8">Nukus, Republic
-                                                        Karakalpakstan, Uzbekistan</a></li>
-                                                <li><a href="#">hexashop@company.uz</a></li>
+                                                <li><a href="https://maps.app.goo.gl/7ShSsxdZYqAAw4Wc8">Nókis, Respublika.
+                                                        Qaraqalpaqstan, Ózbekstan.</a></li>
+                                                <li><a href="#">fashionshopnukus.uz</a></li>
                                                 <li><a href="#">+998 93 365 13 02</a></li>
                                             </ul>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-3">
-                                        <h4>Useful Links</h4>
+                                        <h4>Paydalı siltemeler</h4>
                                         <ul>
-                                            <li><a href="{{Route('home_page')}}">Homepage</a></li>
-                                            <li><a href="{{Route('home_page')}}">Products</a></li>
-                                            <li><a href="{{Route('about_page')}}">About Us</a></li>
-                                            <li><a href="{{Route('basket_page')}}">Basket</a></li>
-                                            <li><a href="#">Contact Us</a></li>
+                                            <li><a href="{{Route('home_page')}}">Bas bet</a></li>
+                                            <li><a href="{{Route('home_page')}}">Ónimler</a></li>
+                                            <li><a href="{{Route('basket_page')}}">Sebet</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3">
-                                        <h4>Help &amp; Information</h4>
+                                        <h4>Járdem &amp; Maǵlıwmat</h4>
                                         <ul>
-                                            <li><a href="#">Help</a></li>
-                                            <li><a href="#">FAQ's</a></li>
-                                            <li><a href="#">Shipping</a></li>
-                                            <li><a href="#">Tracking ID</a></li>
+                                            <li><a href="#">Járdem</a></li>
+                                            <li><a href="#">Soraw-juwaplar</a></li>
+                                            <li><a href="#">Jiberiw</a></li>
+                                            <li><a href="#">Qadaǵalaw ID</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-12">

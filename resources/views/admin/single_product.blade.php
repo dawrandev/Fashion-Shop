@@ -15,21 +15,21 @@
                                     <div class="row">
                                         <div class="col" style="text-align:center">
                                             <img style="object-fit:cover"
-                                                src="/storage/images/{{$single_product->image}}" width="300px"
+                                                src="{{ asset('storage/images/' . $single_product->image)}}" width="300px"
                                                 height="400px" alt=""><br><br>
-                                            <input type="submit" value="Edit" class="btn btn-light">
+                                            <input type="submit" value="Redaktorlaw" class="btn btn-light">
                                         </div>
                                         <div class="col" style="text-align:center">
                                             <img style="object-fit:cover"
-                                                src="/storage/images/{{$single_product->image_1}}" width="300px"
+                                                src="{{ asset('storage/images/' . $single_product->image_1)}}" width="300px"
                                                 height="400px" alt=""><br><br>
-                                            <input type="submit" value="Edit" class="btn btn-light">
+                                            <input type="submit" value="Redaktorlaw" class="btn btn-light">
                                         </div>
                                         <div class="col" style="text-align:center">
                                             <img style="object-fit:cover"
-                                                src="/storage/images/{{$single_product->image_2}}" width="300px"
+                                                src="{{ asset('storage/images/' . $single_product->image_2)}}" width="300px"
                                                 height="400px" alt=""><br><br>
-                                            <input type="submit" value="Edit" class="btn btn-light">
+                                            <input type="submit" value="Redaktorlaw" class="btn btn-light">
                                         </div>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                         <div class="col">
                                             <select class="form-control" name="category_name" id="">
                                                 @foreach ($categories as $category)
-                                                    <option value="{{$category->id}}" {{ $category->name == $single_product->category_name ? 'selected' : '' }}>{{$category->name}}</option>
+                                                <option value="{{$category->id}}" {{ $category->name == $single_product->category_name ? 'selected' : '' }}>{{$category->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -65,7 +65,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-
+                                    <div class="card-footer text-right">
+                                        <a href="{{ route('delete_product', $single_product->id) }}" class="btn btn-danger">Óshiriw</a>
+                                        <a href="#" class="btn btn-primary">Jańalaw</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

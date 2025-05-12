@@ -9,4 +9,20 @@ class Product extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function colors()
+    {
+        return $this->belongsToMany(Color::class, 'pieces');
+    }
+
+    public function sizes()
+    {
+        return $this->belongsToMany(Size::class, 'pieces');
+    }
 }

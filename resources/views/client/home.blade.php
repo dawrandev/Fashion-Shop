@@ -4,21 +4,18 @@
     </x-slot:title>
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
-        <li class="scroll-to-section"><a href="{{Route('home_page')}}" class="active">Home</a></li>
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}" class="active">Bas bet</a></li>
         <li class="submenu">
-            <a href="">Categories</a>
+            <a href="">Kategoriyalar</a>
             <ul>
                 @foreach ($categories as $category)
                 <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
-        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
-        <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
-        <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
-        <li class="scroll-to-section"><a href="#">Contact Us</a></li>
-        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profile</a></li>
+        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Ónimler</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Sebet</a></li>
+        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profil</a></li>
     </ul>
 
     <!-- ***** Menu End ***** -->
@@ -38,10 +35,10 @@
                         <div class="thumb">
                             <div class="inner-content">
                                 <div class="main-border-button">
-                                    <a href="#">Purchase Now!</a>
+                                    <a href="#">Házir satıp alıw!</a>
                                 </div>
                             </div>
-                            <img src="{{asset('images/baner.jpg') }}" alt="" height="630px">
+                            <img src="{{asset('storage/images/baner.jpg') }}" alt="" height="630px">
                         </div>
                     </div>
                 </div>
@@ -60,12 +57,11 @@
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
                                                 </p>
                                                 <div class="main-border-button">
-                                                    <a href="{{Route('category_product', $category->id)}}">Discover
-                                                        More</a>
+                                                    <a href="{{Route('category_product', $category->id)}}">Kóbirek</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img style="height:300px; width: 340px; " src="{{ asset('images/' . $category->image_baner) }}"" alt=" {{$category->image_banner}}">
+                                        <img style="height:300px; width: 340px; " src="{{ asset('storage/images/' . $category->image_baner) }}"" alt=" {{$category->image_banner}}">
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +99,7 @@
                                             <div class="hover-content">
                                             </div>
                                             <a href="{{Route('single_product', [$category_product->product_id])}}"><img
-                                                    src="{{ asset('images/' . $category_product->image) }}"
+                                                    src="{{ asset('storage/images/' . $category_product->image) }}"
                                                     alt="{{$category_product->image}}" width="300px" height="400px"></a>
                                         </div>
                                         <div class="down-content">
@@ -184,12 +180,12 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="first-image">
-                                            <img src="{{asset('images/explore-image-01.jpg') }}" alt="">
+                                            <img src="{{asset('storage/images/explore-image-01.jpg') }}" alt="">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="second-image">
-                                            <img src="{{asset('images/explore-image-02.jpg') }}" alt="">
+                                            <img src="{{asset('storage/images/explore-image-02.jpg') }}" alt="">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">

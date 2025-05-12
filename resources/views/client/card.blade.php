@@ -69,7 +69,7 @@
 
         <div class="qr-code-container">
             <!-- O'z rasmingizni shu joyga qo'yishingiz kerak -->
-            <img src="{{ asset('images/20250406_205707.jpg') }}" alt="Click Shtrix Kodi" class="qr-code">
+            <img src="{{ asset('storage/images/20250406_205707.jpg') }}" alt="Click Shtrix Kodi" class="qr-code">
         </div>
 
         <div class="description">

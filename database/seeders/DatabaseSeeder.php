@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Admin;
 use App\Models\Piece;
 use App\Models\Price;
 use App\Models\Product;
@@ -19,6 +21,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        Admin::create([
+            'username' => 'admin',
+            'password' => 'admin'
+        ]);
+
         Category::create([
             'name' => 'shoe',
             'image_baner' => 'baner-right-image-01.jpg'

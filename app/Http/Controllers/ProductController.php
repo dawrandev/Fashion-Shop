@@ -66,6 +66,7 @@ class ProductController extends Controller
         $products = DB::table('products')
             ->join('categories', 'products.category_id', '=', 'categories.id')
             ->select('categories.id as category_id', 'products.id as product_id', 'categories.name as category_name', 'products.name as product_name', 'image', 'products.price')
+            ->orderBy('products.created_at', 'desc')
             ->paginate(9);
         return view('admin.products', compact('products', 'categories'));
     }
@@ -74,7 +75,4 @@ class ProductController extends Controller
         $data = $this->get_product_data($product_id);
         return view('admin.single_product', $data);
     }
-
-
-
 }

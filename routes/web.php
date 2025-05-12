@@ -84,6 +84,7 @@ Route::get('/price', [Counter::class, 'price'])->name('price');
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login_page', 'login_page')->name('login_page');
     Route::get('register_page', 'register_page')->name('register_page');
+    Route::post('/login', 'login')->name('login');
 });
 
 Route::controller(AdminController::class)->group(function () {
@@ -91,6 +92,7 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/client_products/{user_id}', 'client_products')->name('client_products');
     Route::get('/create_product_page', 'create_product_page')->name('create_product_page');
     Route::post('/create_product', 'create_product')->name('create_product');
+    Route::get('/delete_product/{id}', 'delete_product')->name('delete_product');
 });
 
 Route::controller(PieceController::class)->group(function () {

@@ -54,7 +54,7 @@
                                     <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="{{ asset('images/' . $product->image) }}" alt="{{$product->image}}" width="300px"
+                            <img src="{{ asset('storage/images/' . $product->image) }}" alt="{{$product->image}}" width="300px"
                                 height="400px">
                         </div>
                         <div class="down-content">
