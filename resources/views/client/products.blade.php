@@ -4,21 +4,21 @@
     </x-slot:title>
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
-        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Bas bet</a></li>
         <li class="submenu">
-            <a href="">Categories</a>
+            <a href="">Kategoriyalar</a>
             <ul>
                 @foreach ($categories as $category)
                 <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
-        <li class="scroll-to-section"><a href="{{Route('products_page')}}" class="active">Products</a></li>
-        <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
-        <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
-        <li class="scroll-to-section"><a href="#">Contact Us</a></li>
-        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profile</a></li>
+        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Ónimler</a></li>
+        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profil</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}"><i class="material-icons">shopping_cart</i></a></li>
+        <a href="https://t.me/fashionshopnukus" target="_blank">
+            <i class="fab fa-telegram fa-2x"></i>
+        </a>
     </ul>
 
     <!-- ***** Menu End ***** -->
@@ -39,8 +39,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Our All Products</h2>
-                        <span>Check out all of our products.</span>
+                        <h2>Bizlerdiń ónimlerimiz</h2>
+                        <span></span>
                     </div>
                 </div>
             </div>

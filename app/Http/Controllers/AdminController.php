@@ -115,13 +115,13 @@ class AdminController extends Controller
         $caption .= "🏷 <b>Atı:</b> {$product->name}\n";
         $caption .= "💵 <b>Baxası:</b> {$product->price} so'm\n\n";
 
-        $caption .= "<b>Tolıq maǵlıwmat: <a href='http://127.0.0.1:8000/single_product/{$product->id}'>link</a></b>";
+        $caption .= "<b>Tolıq maǵlıwmat: <a href='https://fashionshopnukus.uz/single_product/{$product->id}'>link</a></b>";
 
 
         $mainImagePath = storage_path('app/public/images/' . $product->image);
         sendTelegramMessage($caption, $mainImagePath);
 
-        return redirect()->route('create_pieces_page')->with('success', 'Mahsulot muvaffaqiyatli qo‘shildi va Telegramga yuborildi!');
+        return redirect()->route('create_pieces_page')->with('success');
     }
 
 

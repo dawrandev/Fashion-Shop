@@ -1,21 +1,21 @@
 <x-layouts.main>
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
-        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Bas bet</a></li>
         <li class="submenu">
-            <a href="">Categories</a>
+            <a href="">Kategoriyalar</a>
             <ul>
                 @foreach ($categories as $category)
                 <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
-        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
-        <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
-        <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
-        <li class="scroll-to-section"><a href="#">Contact Us</a></li>
-        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-        <li class="scroll-to-section"><a href="{{Route('profile')}}" class="active">Profile</a></li>
+        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Ónimler</a></li>
+        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profil</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}"><i class="material-icons">shopping_cart</i></a></li>
+        <a href="https://t.me/fashionshopnukus" target="_blank">
+            <i class="fab fa-telegram fa-2x"></i>
+        </a>
     </ul>
 
     <!-- ***** Menu End ***** -->
@@ -34,35 +34,34 @@
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="true" href="#">Profile</a>
+                                    <a class="nav-link active" aria-current="true" href="#">Profil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="true" href="{{Route('histories')}}">Histories</a>
+                                    <a class="nav-link" aria-current="true" href="{{Route('histories')}}">Táriyx</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="card-body w-100 mb-3">
-                            <h5 class="card-title">Profile Documents</h5>
+                            <h5 class="card-title">Profil maǵlıwmatları</h5>
                             <form action="{{Route('update_client')}}" method="post">
                                 @csrf
                                 @foreach($client_documents as $client)
-                                <p>Surname</p>
+                                <p>Familiya</p>
                                 <input type="text" class="form-control" name="surname" value="{{$client->surname}}"><br>
                                 @error('surname')
                                 <li style="color:red">{{$message}}</li>
                                 @enderror
-                                <p>Name</p>
+                                <p>Atı</p>
                                 <input type="text" class="form-control" name="name" value="{{$client->name}}"><br>
                                 @error('name')
                                 <li style="color:red">{{$message}}</li>
                                 @enderror
-                                <p>Phone</p>
+                                <p>Telefon</p>
                                 <input type="number" class="form-control" name="phone" value="{{$client->phone}}"><br>
                                 @error('phone')
                                 <li style="color:red">{{$message}}</li>
                                 @enderror
-                                <p>Address</p>
-
+                                <p>Mánzil</p>
                                 <div class="row">
                                     <div class="col-11">
                                         <input type="text" class="form-control" name="address" value="{{$client->address}}"><br>

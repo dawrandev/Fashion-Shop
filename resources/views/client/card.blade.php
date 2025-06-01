@@ -60,6 +60,70 @@
             font-size: 14px;
             color: #888;
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-btn,
+        .send-btn {
+            padding: 10px 20px;
+            margin-top: 15px;
+            border: none;
+            background-color: rgb(0, 47, 255);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .modal-btn:hover,
+        .send-btn:hover {
+            background-color: rgb(0, 38, 204);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 
@@ -68,7 +132,6 @@
         <div class="title">Click qosımshası arqalı tóleń</div>
 
         <div class="qr-code-container">
-            <!-- O'z rasmingizni shu joyga qo'yishingiz kerak -->
             <img src="{{ asset('storage/images/20250406_205707.jpg') }}" alt="Click Shtrix Kodi" class="qr-code">
         </div>
 
@@ -77,9 +140,36 @@
         </div>
 
         <div class="footer">
-            Checkti <a href="https://t.me/dawrandev">dawrandev</a> qa jiberiń
+            <button onclick="openModal()" class="modal-btn">Chekti jiberiw</button>
+        </div>
+    </div>
+    <div id="checkModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Chekti jiberiw</p>
+            <form action="{{ route('send_check') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="check_image" value="Jiberiw" id="">
+                <input type="submit" name="send_check" class="send-btn" value="Jiberiw" id="">
+            </form>
         </div>
     </div>
 </body>
+<script>
+    function openModal() {
+        document.getElementById("checkModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("checkModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById("checkModal");
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+</script>
 
 </html>

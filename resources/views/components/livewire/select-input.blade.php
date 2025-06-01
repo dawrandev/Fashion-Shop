@@ -3,8 +3,7 @@
         @csrf
         <div class="form-group">
             <label>Birnesheni tańlaw</label>
-            <select name="category_id" class="form-control" wire:model="selectedCategory"
-                wire:change="CategoryProducts">
+            <select name="category_id" class="form-control" wire:model="selectedCategory" wire:change="CategoryProducts">
                 @foreach ($categories as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
@@ -36,9 +35,8 @@
             <div class="selectgroup w-100">
                 @foreach($colors as $color)
                 <label class="selectgroup-item">
-                    <div style="accent-color: {{$color->color}}">
-                        <input type="radio" name="color_id" value="{{$color->id}}">
-                        <span>{{$color->color}}</span>
+                    <input type="radio" name="color_id" value="{{$color->id}}" style="accent-color: {{$color->color}}">
+                    <span>{{$color->color}}</span>
                 </label>
                 @endforeach
             </div>

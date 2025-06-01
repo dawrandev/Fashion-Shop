@@ -21,7 +21,6 @@ class AuthController extends Controller
             'username' => 'required',
             'password' => 'required'
         ]);
-
         $admin = Admin::first();
         if ($admin->password == $request->password) {
             return redirect()->route('clients_table');

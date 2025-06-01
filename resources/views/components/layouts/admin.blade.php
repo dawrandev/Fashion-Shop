@@ -61,6 +61,9 @@
               <a href="{{Route('create_pieces_page')}}" class="nav-link"><i
                   data-feather="command"></i><span>Sanın kiritiw</span>
               </a>
+              <a href="{{Route('client_checks')}}" class="nav-link"><i
+                  data-feather="copy"></i><span>Chekler</span>
+              </a>
             </li>
             </li>
           </ul>

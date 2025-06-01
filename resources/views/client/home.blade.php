@@ -4,7 +4,7 @@
     </x-slot:title>
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
-        <li class="scroll-to-section"><a href="{{Route('home_page')}}" class="active">Bas bet</a></li>
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Bas bet</a></li>
         <li class="submenu">
             <a href="">Kategoriyalar</a>
             <ul>
@@ -14,8 +14,11 @@
             </ul>
         </li>
         <li class="scroll-to-section"><a href="{{Route('products_page')}}">Ónimler</a></li>
-        <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Sebet</a></li>
         <li class="scroll-to-section"><a href="{{Route('profile')}}">Profil</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}"><i class="material-icons">shopping_cart</i></a></li>
+        <a href="https://t.me/fashionshopnukus" target="_blank">
+            <i class="fab fa-telegram fa-2x"></i>
+        </a>
     </ul>
 
     <!-- ***** Menu End ***** -->
@@ -23,10 +26,47 @@
     </div>
     </div>
     </div>
+    <style>
+        <style>#header-carousel {
+            margin-bottom: 0 !important;
+        }
+
+        .carousel-inner {
+            border-radius: 0 !important;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+    </style>
+    </style>
     </header>
+
+    <div id="header-carousel" class="carousel slide mb-0" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{asset('storage/images/Flux_Dev_A_modern_website_hero_s.jpg')}}" class="d-block w-100" alt="Slider 1" style="height: 400px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="{{asset('storage/images/Flux_Dev_A_modern_fashion_ecomme.jpg')}}" class="d-block w-100" alt="Slider 2" style="height: 400px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="{{asset('storage/images/Flux_Dev_Ecommerce_fashion_sale_banner_with_bold_text_50_ge_sh_0.jpg')}}" class="d-block w-100" alt="Slider 3" style="height: 400px; object-fit: cover;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Oldingi</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Keyingi</span>
+        </button>
+    </div>
     <!-- ***** Header Area End ***** -->
     <!-- ***** Main Banner Area Start ***** -->
-    {{Auth::user()->id}}
     <div class="main-banner" id="top">
         <div class="container-fluid">
             <div class="row">
@@ -38,7 +78,7 @@
                                     <a href="#">Házir satıp alıw!</a>
                                 </div>
                             </div>
-                            <img src="{{asset('storage/images/baner.jpg') }}" alt="" height="630px">
+                            <img src="{{asset('storage/images/Flux_Dev_A_stylish_modern_fashion_clothing_store_interior_with_0.jpg') }}" alt="" height="630px">
                         </div>
                     </div>
                 </div>
@@ -54,8 +94,6 @@
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
-                                                </p>
                                                 <div class="main-border-button">
                                                     <a href="{{Route('category_product', $category->id)}}">Kóbirek</a>
                                                 </div>
@@ -82,7 +120,6 @@
                                 <h2><a style="color:black"
                                         href="{{Route('category_product', $category->id)}}">{{$category->name}}</a>
                                 </h2>
-                                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span>
                             </div>
                         </div>
                     </div>
@@ -136,70 +173,4 @@
                 </div>
                 @endforeach
             </section>
-            <!-- ***** Men Area Ends ***** -->
-
-            <!-- ***** Explore Area Starts ***** -->
-            <section class="section" id="explore">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="left-content">
-                                <h2>Explore Our Products</h2>
-                                <span>You are allowed to use this HexaShop HTML CSS template. You can feel free
-                                    to modify or
-                                    edit this layout. You can convert this template as any kind of ecommerce CMS
-                                    theme as you
-                                    wish.</span>
-                                <div class="quote">
-                                    <i class="fa fa-quote-left"></i>
-                                    <p>You are not allowed to redistribute this template ZIP file on any other
-                                        website.</p>
-                                </div>
-                                <p>There are 5 pages included in this HexaShop Template and we are providing it
-                                    to you for
-                                    absolutely free of charge at our TemplateMo website. There are web
-                                    development costs for us.
-                                </p>
-                                <p>If this template is beneficial for your website or business, please kindly <a
-                                        rel="nofollow" href="https://paypal.me/templatemo" target="_blank">support
-                                        us</a> a little via PayPal.
-                                    Please also tell your friends about our great website. Thank you.</p>
-                                <div class="main-border-button">
-                                    <a href="products.html">Discover More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="right-content">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="leather">
-                                            <h4>Leather Bags</h4>
-                                            <span>Latest Collection</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="first-image">
-                                            <img src="{{asset('storage/images/explore-image-01.jpg') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="second-image">
-                                            <img src="{{asset('storage/images/explore-image-02.jpg') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="types">
-                                            <h4>Different Types</h4>
-                                            <span>Over 304 Products</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- ***** Explore Area Ends ***** -->
-
 </x-layouts.main>

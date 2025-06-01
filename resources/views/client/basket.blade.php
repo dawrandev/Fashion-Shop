@@ -3,21 +3,21 @@
         Basket
     </x-slot:title>
     <ul class="nav">
-        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Bas bet</a></li>
         <li class="submenu">
-            <a href="">Categories</a>
+            <a href="">Kategoriyalar</a>
             <ul>
                 @foreach ($categories as $category)
                 <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
-        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
-        <li class="scroll-to-section"><a href="{{Route('basket_page')}}" class="active">Basket</a></li>
-        <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
-        <li class="scroll-to-section"><a href="#">Contact Us</a></li>
-        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profile</a></li>
+        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Ónimler</a></li>
+        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profil</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}"><i class="material-icons">shopping_cart</i></a></li>
+        <a href="https://t.me/fashionshopnukus" target="_blank">
+            <i class="fab fa-telegram fa-2x"></i>
+        </a>
     </ul>
 
     <!-- ***** Menu End ***** -->
@@ -33,24 +33,24 @@
             <div class="col-8 mt-3"><br>
                 <div class="row mt-5">
                     <div class="col">
-                        <h2 style="border" align="start">Basket</h2>
+                        <h2 style="border" align="start">Sebet</h2>
                     </div>
                     <div class="col">
-                        <h4 style="border" align="end">Total:{{$summa}}</h4>
+                        <h4 style="border" align="end">Jámi:{{$summa}}</h4>
                     </div>
                 </div>
                 <table class="table table-hover" style="">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Size</th>
-                            <th scope="col">Color</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Pcs</th>
-                            <th scope="col">Delete</th>
+                            <th scope="col">Súwret</th>
+                            <th scope="col">Kategoriya</th>
+                            <th scope="col">Ónim</th>
+                            <th scope="col">Ólshem</th>
+                            <th scope="col">Reń</th>
+                            <th scope="col">Baxa</th>
+                            <th scope="col">Sanı</th>
+                            <th scope="col">Óshiriw</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,7 +78,7 @@
                 <div class="total">
                     <div class="main-border-button">
                         <a href="{{Route('card_page', $summa)}}">
-                            Add To Card
+                            Karta arqalı tólew
                         </a>
                     </div>
                 </div>

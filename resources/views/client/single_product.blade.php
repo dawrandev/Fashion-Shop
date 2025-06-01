@@ -4,21 +4,21 @@
     </x-slot:title>
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
-        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Bas bet</a></li>
         <li class="submenu">
-            <a href="">Categories</a>
+            <a href="">Kategoriyalar</a>
             <ul>
                 @foreach ($categories as $category)
                 <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
-        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
-        <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
-        <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
-        <li class="scroll-to-section"><a href="#">Contact Us</a></li>
-        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profile</a></li>
+        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Ónimler</a></li>
+        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profil</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}"><i class="material-icons">shopping_cart</i></a></li>
+        <a href="https://t.me/fashionshopnukus" target="_blank">
+            <i class="fab fa-telegram fa-2x"></i>
+        </a>
     </ul>
 
     <!-- ***** Menu End ***** -->
@@ -52,12 +52,12 @@
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
                                 data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
+                                <span class="visually-hidden">Aldınǵa</span>
                             </button>
                             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
                                 data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
+                                <span class="visually-hidden">Keyinge</span>
                             </button>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                 <div class="col-lg-4">
                     <div class="right-content">
                         <h4>{{$single_product->name}}</h4>
-                        <span class="price">Pieces:{{$pcs}}</span>
+                        <span class="price">Sanı:{{$pcs}}</span>
                         <ul class="stars">
                             <h4>{{$single_product->price}}</h4>
                         </ul>
@@ -82,5 +82,4 @@
         </div>
     </section>
     <!-- ***** Product Area Ends ***** -->
-
 </x-layouts.main>

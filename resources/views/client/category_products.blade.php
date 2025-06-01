@@ -4,21 +4,21 @@
     </x-slot:title>
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
-        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Bas bet</a></li>
         <li class="submenu">
-            <a href="">Categories</a>
+            <a href="">Kategoriyalar</a>
             <ul>
                 @foreach ($categories as $category)
                 <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
-        <li class="scroll-to-section"><a href="{{Route('products_page')}}" class="active">Products</a></li>
-        <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
-        <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
-        <li class="scroll-to-section"><a href="#">Contact Us</a></li>
-        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profile</a></li>
+        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Ónimler</a></li>
+        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profil</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}"><i class="material-icons">shopping_cart</i></a></li>
+        <a href="https://t.me/fashionshopnukus" target="_blank">
+            <i class="fab fa-telegram fa-2x"></i>
+        </a>
     </ul>
 
     <!-- ***** Menu End ***** -->
@@ -35,8 +35,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Our All Products</h2>
-                        <span>Check out all of our products.</span>
+                        <h2>Bizlerdiń ónimlerimiz</h2>
+                        <span></span>
                     </div>
                 </div>
             </div>
@@ -48,11 +48,6 @@
                     <div class="item">
                         <div class="thumb">
                             <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
                             </div>
                             <img src="{{ asset('storage/images/' . $product->image) }}" alt="{{$product->image}}" width="300px"
                                 height="400px">
@@ -60,13 +55,6 @@
                         <div class="down-content">
                             <h4>{{$product->product_name}}</h4>
                             <span>{{$product->price}}</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -78,7 +66,6 @@
                             <li class="{{ ($products->currentPage() == 1) ? ' disabled' : '' }}">
                                 <a href="{{$products->url(1)}}">
                                     < </a>
-
                             </li>
                             @for ($i = 1; $i <= $products->lastPage(); $i++)
                                 <li class="{{ ($products->currentPage() == $i) ? ' active' : '' }}">

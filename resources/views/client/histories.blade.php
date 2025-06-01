@@ -1,21 +1,21 @@
 <x-layouts.main>
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
-        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Home</a></li>
+        <li class="scroll-to-section"><a href="{{Route('home_page')}}">Bas bet</a></li>
         <li class="submenu">
-            <a href="">Categories</a>
+            <a href="">Kategoriyalar</a>
             <ul>
                 @foreach ($categories as $category)
                 <li><a href="{{Route('category_product', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </li>
-        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Products</a></li>
-        <li class="scroll-to-section"><a href="{{Route('basket_page')}}">Basket</a></li>
-        <li class="scroll-to-section"><a href="{{Route('about_page')}}">About Us</a></li>
-        <li class="scroll-to-section"><a href="#">Contact Us</a></li>
-        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-        <li class="scroll-to-section"><a href="{{Route('profile')}}" class="active">Profile</a></li>
+        <li class="scroll-to-section"><a href="{{Route('products_page')}}">Ónimler</a></li>
+        <li class="scroll-to-section"><a href="{{Route('profile')}}">Profil</a></li>
+        <li class="scroll-to-section"><a href="{{Route('basket_page')}}"><i class="material-icons">shopping_cart</i></a></li>
+        <a href="https://t.me/fashionshopnukus" target="_blank">
+            <i class="fab fa-telegram fa-2x"></i>
+        </a>
     </ul>
 
     <!-- ***** Menu End ***** -->
@@ -34,10 +34,10 @@
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{Route('profile')}}">Profile</a>
+                                    <a class="nav-link" href="{{Route('profile')}}">Profil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="true" href="#">Histories</a>
+                                    <a class="nav-link active" aria-current="true" href="#">Táriyx</a>
                                 </li>
                             </ul>
                         </div>
@@ -46,14 +46,14 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Image</th>
-                                        <th scope="col">Category</th>
-                                        <th scope="col">Product</th>
-                                        <th scope="col">Size</th>
-                                        <th scope="col">Color</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Pcs</th>
-                                        <th scope="col">Date</th>
+                                        <th scope="col">Súwret</th>
+                                        <th scope="col">Kategoriye</th>
+                                        <th scope="col">Ónim</th>
+                                        <th scope="col">Ólshem</th>
+                                        <th scope="col">Reń</th>
+                                        <th scope="col">Baxası</th>
+                                        <th scope="col">Sanı</th>
+                                        <th scope="col">Sáne</th>
                                     </tr>
                                 </thead>
                                 <tbody>

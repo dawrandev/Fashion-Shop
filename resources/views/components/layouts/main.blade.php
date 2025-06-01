@@ -22,6 +22,10 @@
 
     <link rel="stylesheet" href="{{URL::asset('assets1/css/lightbox.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    <!-- Heroicons CSS - CDN -->
+    <link rel="stylesheet" href="{{ URL::asset('assets2/css/app.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 
     TemplateMo 571 Hexashop
@@ -59,7 +63,6 @@
     </div>
     <!-- ***** Preloader End ***** -->
 
-
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
@@ -68,7 +71,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="{{Route('home_page')}}" class="logo">
-                            <img src="{{asset('storage/images/Flux_Dev_Minimalistic_logo_for_an_online_clothing_store_named__0 (1).svg') }}" style="height: 90px; width: 190px;">
+                            <img src="{{asset('storage/images/Flux_Dev_Minimalistic_logo_for_an_online_clothing_store_named__0 (1).svg') }}" style="height: 80px; width: 190px;">
                         </a>
                         <!-- ***** Logo End ***** -->
 

@@ -72,6 +72,8 @@ Route::controller(ClientController::class)->group(function () {
 });
 Route::controller(CardController::class)->group(function () {
     Route::get('/card_page/{summa}', 'card_page')->name('card_page');
+    Route::post('/send_check', 'send_check')->name('send_check');
+    Route::get('/client_checks', 'client_checks')->name('client_checks');
 });
 Route::controller(HistoryController::class)->group(function () {
     Route::get('/histories', 'histories')->name('histories');

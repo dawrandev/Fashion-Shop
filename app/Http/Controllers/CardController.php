@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Basket;
+use App\Models\Card;
 use App\Models\Client;
 use App\Models\History;
 use App\Models\Piece;
@@ -50,5 +51,38 @@ class CardController extends Controller
         } else {
             return redirect()->route('registration_page');
         }
+    }
+
+    public function send_check(Request $request)
+    {
+        $request->validate([
+            'check_image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        if ($request->hasFile('check_image')) {
+            $file = $request->file('check_image');
+
+            $fileName = time() . '_' . $file->getClientOriginalName();
+
+            $file->storeAs('public/checks', $fileName);
+
+            Card::create([
+                'user_id' => auth()->id(),
+                'check' => $fileName,
+            ]);
+
+            return back()->with('success', 'Check muvaffaqiyatli yuborildi.');
+        }
+
+        return redirect() - route('basket');
+    }
+
+    public function client_checks()
+    {
+        $checks = Card::join('clients', 'cards.user_id', '=', 'clients.user_id')
+            ->select('clients.*', 'cards.check')
+            ->orderBy('cards.created_at', 'desc')
+            ->paginate(10);
+        return view('admin.client_checks', compact('checks'));
     }
 }
